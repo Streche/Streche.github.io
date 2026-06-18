@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+
+/*
+  Base do projeto. O conteúdo visual virá nas Fases 3/4.
+  Aqui só estabelecemos fundamentos: tipografia, reset leve e acessibilidade.
+*/
+
+:root {
+  color-scheme: light dark;
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+}
+
+html {
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+}
+
+/* Respeita usuários que pedem menos movimento (acessibilidade). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
