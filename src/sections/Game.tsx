@@ -21,13 +21,18 @@ export function Game() {
         travada enquanto você joga.
       </p>
 
-      <div
-        className="mb-3 flex justify-between font-mono text-sm text-neutral-700 dark:text-neutral-300"
-        aria-live="polite"
-      >
+      <div className="mb-3 flex justify-between font-mono text-sm text-neutral-700 dark:text-neutral-300">
         <span>Pontos: {state.score}</span>
         <span>Recorde: {state.highScore}</span>
       </div>
+
+      {/*
+        Região de status para leitores de tela: anuncia apenas as transições
+        (início/fim de jogo), evitando narrar o score a cada frame.
+      */}
+      <p className="sr-only" role="status">
+        {state.status === 'running' ? 'Jogo em andamento.' : overlayMessage}
+      </p>
 
       <div className="relative">
         <canvas
