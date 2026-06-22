@@ -69,6 +69,7 @@ export const profile: Profile = {
         'Este site, com um mini-game 2D integrado e recorde pessoal salvo no navegador.',
       tags: ['React', 'TypeScript', 'Canvas', 'Tailwind'],
       repoUrl: 'https://github.com/Streche/Streche.github.io',
+      liveUrl: 'https://streche.github.io',
     },
   ],
 }

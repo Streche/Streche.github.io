@@ -4,7 +4,7 @@ Portfólio pessoal de **Carlos Eduardo** — Desenvolvedor Full Stack — com um
 mini-game 2D integrado (estilo endless-runner) e recorde pessoal salvo no
 navegador. Hospedado no GitHub Pages.
 
-> 🚧 **Em construção.** Fundação do projeto concluída (Fases 0 e 1).
+🔗 **Ao vivo:** https://streche.github.io
 
 ## 🧱 Stack
 
