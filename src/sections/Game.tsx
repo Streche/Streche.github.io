@@ -10,14 +10,15 @@ export function Game() {
 
   const overlayMessage =
     state.status === 'idle'
-      ? 'Clique ou pressione espaço para começar'
+      ? 'Toque ou clique para começar'
       : `Fim de jogo! Você fez ${state.score} ponto${state.score === 1 ? '' : 's'}.`
 
   return (
     <Section id="jogo" title="Mini-game">
       <p className="mb-4 text-neutral-700 dark:text-neutral-300">
-        Desvie dos obstáculos! Pressione <kbd>espaço</kbd> / <kbd>↑</kbd> ou
-        toque na tela para pular.
+        Toque (ou clique) para começar. Durante a partida, pule com{' '}
+        <kbd>espaço</kbd>, <kbd>↑</kbd> ou um toque na tela. A rolagem fica
+        travada enquanto você joga.
       </p>
 
       <div

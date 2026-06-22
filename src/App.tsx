@@ -7,10 +7,10 @@ import { Game } from './sections/Game'
 import { Contact } from './sections/Contact'
 
 const navLinks = [
+  { href: '#jogo', label: 'Jogo' },
   { href: '#sobre', label: 'Sobre' },
   { href: '#competencias', label: 'Competências' },
   { href: '#projetos', label: 'Projetos' },
-  { href: '#jogo', label: 'Jogo' },
   { href: '#contato', label: 'Contato' },
 ]
 
@@ -50,10 +50,10 @@ function App() {
 
       <main id="conteudo">
         <Hero />
+        <Game />
         <About />
         <Skills />
         <Projects />
-        <Game />
         <Contact />
       </main>
 

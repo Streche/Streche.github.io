@@ -32,9 +32,27 @@ export function useGame(canvasRef: RefObject<HTMLCanvasElement | null>) {
     game.render(ctx)
     loop.start()
 
+    // Teclas que rolam a página — bloqueadas enquanto o jogo está rodando
+    // para "travar a tela" durante a partida.
+    const scrollKeys = new Set([
+      'Space',
+      'ArrowUp',
+      'ArrowDown',
+      'ArrowLeft',
+      'ArrowRight',
+      'PageUp',
+      'PageDown',
+      'Home',
+      'End',
+    ])
+
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.code === 'Space' || event.code === 'ArrowUp') {
+      // Só intercepta o teclado durante a partida (não atrapalha o resto do site).
+      if (game.getState().status !== 'running') return
+      if (scrollKeys.has(event.code)) {
         event.preventDefault()
+      }
+      if (event.code === 'Space' || event.code === 'ArrowUp') {
         game.jump()
       }
     }
