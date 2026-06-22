@@ -3,12 +3,14 @@ import { Hero } from './sections/Hero'
 import { About } from './sections/About'
 import { Skills } from './sections/Skills'
 import { Projects } from './sections/Projects'
+import { Game } from './sections/Game'
 import { Contact } from './sections/Contact'
 
 const navLinks = [
   { href: '#sobre', label: 'Sobre' },
   { href: '#competencias', label: 'Competências' },
   { href: '#projetos', label: 'Projetos' },
+  { href: '#jogo', label: 'Jogo' },
   { href: '#contato', label: 'Contato' },
 ]
 
@@ -51,6 +53,7 @@ function App() {
         <About />
         <Skills />
         <Projects />
+        <Game />
         <Contact />
       </main>
 
