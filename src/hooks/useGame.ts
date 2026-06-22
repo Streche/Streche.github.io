@@ -2,11 +2,13 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import type { RefObject } from 'react'
 import { Game } from '../game/engine/game'
 import { createLoop } from '../game/engine/loop'
+import type { Loop } from '../game/engine/loop'
 import type { GameState } from '../game/types'
 
 /**
  * Liga o motor do jogo a um <canvas>: cria o loop, trata input de teclado
  * e expõe o estado (status/score/highScore) e a ação `jump` para a UI.
+ * O loop só roda enquanto a partida está em andamento (economia de bateria).
  */
 export function useGame(canvasRef: RefObject<HTMLCanvasElement | null>) {
   const [state, setState] = useState<GameState>({
@@ -15,6 +17,7 @@ export function useGame(canvasRef: RefObject<HTMLCanvasElement | null>) {
     highScore: 0,
   })
   const gameRef = useRef<Game | null>(null)
+  const loopRef = useRef<Loop | null>(null)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -29,8 +32,8 @@ export function useGame(canvasRef: RefObject<HTMLCanvasElement | null>) {
       game.update(dt)
       game.render(ctx)
     })
-    game.render(ctx)
-    loop.start()
+    loopRef.current = loop
+    game.render(ctx) // desenha o frame inicial (tela "idle")
 
     // Teclas que rolam a página — bloqueadas enquanto o jogo está rodando
     // para "travar a tela" durante a partida.
@@ -47,7 +50,6 @@ export function useGame(canvasRef: RefObject<HTMLCanvasElement | null>) {
     ])
 
     const onKeyDown = (event: KeyboardEvent) => {
-      // Só intercepta o teclado durante a partida (não atrapalha o resto do site).
       if (game.getState().status !== 'running') return
       if (scrollKeys.has(event.code)) {
         event.preventDefault()
@@ -62,8 +64,20 @@ export function useGame(canvasRef: RefObject<HTMLCanvasElement | null>) {
       loop.stop()
       window.removeEventListener('keydown', onKeyDown)
       gameRef.current = null
+      loopRef.current = null
     }
   }, [canvasRef])
+
+  // Liga/desliga o loop conforme o status: roda só durante a partida.
+  useEffect(() => {
+    const loop = loopRef.current
+    if (!loop) return
+    if (state.status === 'running') {
+      loop.start()
+    } else {
+      loop.stop()
+    }
+  }, [state.status])
 
   const jump = useCallback(() => {
     gameRef.current?.jump()

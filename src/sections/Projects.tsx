@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { profile } from '../data/profile'
 import { Section } from '../components/Section'
 import { Tag } from '../components/Tag'
@@ -7,17 +7,38 @@ import { ExternalLink } from '../components/ExternalLink'
 /** Seção de projetos com rolagem horizontal e setas (laterais). */
 export function Projects() {
   const trackRef = useRef<HTMLUListElement>(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(false)
+
+  const updateArrows = useCallback(() => {
+    const track = trackRef.current
+    if (!track) return
+    const { scrollLeft, scrollWidth, clientWidth } = track
+    setCanScrollLeft(scrollLeft > 1)
+    setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 1)
+  }, [])
+
+  useEffect(() => {
+    updateArrows()
+    const track = trackRef.current
+    if (!track) return
+    track.addEventListener('scroll', updateArrows, { passive: true })
+    window.addEventListener('resize', updateArrows)
+    return () => {
+      track.removeEventListener('scroll', updateArrows)
+      window.removeEventListener('resize', updateArrows)
+    }
+  }, [updateArrows])
 
   const scroll = (direction: -1 | 1) => {
     const track = trackRef.current
     if (!track) return
-    // Rola aproximadamente a largura de um card visível.
     const amount = Math.max(track.clientWidth * 0.8, 280)
     track.scrollBy({ left: direction * amount, behavior: 'smooth' })
   }
 
   const arrowClass =
-    'flex h-10 w-10 shrink-0 items-center justify-center self-center rounded-full border border-neutral-300 text-neutral-700 transition-colors hover:bg-neutral-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-900'
+    'flex h-10 w-10 shrink-0 items-center justify-center self-center rounded-full border border-neutral-300 text-neutral-700 transition enabled:hover:bg-neutral-100 disabled:cursor-not-allowed disabled:opacity-30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 dark:border-neutral-700 dark:text-neutral-300 dark:enabled:hover:bg-neutral-900'
 
   return (
     <Section id="projetos" title="Projetos">
@@ -25,6 +46,7 @@ export function Projects() {
         <button
           type="button"
           onClick={() => scroll(-1)}
+          disabled={!canScrollLeft}
           aria-label="Ver projetos anteriores"
           className={arrowClass}
         >
@@ -78,6 +100,7 @@ export function Projects() {
         <button
           type="button"
           onClick={() => scroll(1)}
+          disabled={!canScrollRight}
           aria-label="Ver próximos projetos"
           className={arrowClass}
         >
