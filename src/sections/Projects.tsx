@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { profile } from '../data/profile'
+import { useI18n } from '../i18n/context'
 import { Section } from '../components/Section'
 import { Tag } from '../components/Tag'
 import { ExternalLink } from '../components/ExternalLink'
 
 /** Seção de projetos com rolagem horizontal e setas (laterais). */
 export function Projects() {
+  const { s, profile } = useI18n()
   const trackRef = useRef<HTMLUListElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(false)
@@ -41,13 +42,13 @@ export function Projects() {
     'flex h-10 w-10 shrink-0 items-center justify-center self-center rounded-full border border-neutral-300 text-neutral-700 transition enabled:hover:bg-neutral-100 disabled:cursor-not-allowed disabled:opacity-30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 dark:border-neutral-700 dark:text-neutral-300 dark:enabled:hover:bg-neutral-900'
 
   return (
-    <Section id="projetos" title="Projetos">
+    <Section id="projetos" title={s.sections.projects}>
       <div className="flex items-stretch gap-2">
         <button
           type="button"
           onClick={() => scroll(-1)}
           disabled={!canScrollLeft}
-          aria-label="Ver projetos anteriores"
+          aria-label={s.projectsNav.prev}
           className={arrowClass}
         >
           <span aria-hidden="true">‹</span>
@@ -81,7 +82,7 @@ export function Projects() {
                     href={project.repoUrl}
                     className="text-neutral-900 underline underline-offset-4 hover:no-underline dark:text-neutral-100"
                   >
-                    Código
+                    {s.project.code}
                   </ExternalLink>
                 )}
                 {project.liveUrl && (
@@ -89,7 +90,7 @@ export function Projects() {
                     href={project.liveUrl}
                     className="text-neutral-900 underline underline-offset-4 hover:no-underline dark:text-neutral-100"
                   >
-                    Ver ao vivo
+                    {s.project.live}
                   </ExternalLink>
                 )}
               </div>
@@ -101,7 +102,7 @@ export function Projects() {
           type="button"
           onClick={() => scroll(1)}
           disabled={!canScrollRight}
-          aria-label="Ver próximos projetos"
+          aria-label={s.projectsNav.next}
           className={arrowClass}
         >
           <span aria-hidden="true">›</span>

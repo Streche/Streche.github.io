@@ -1,13 +1,14 @@
-import { profile } from '../data/profile'
+import { useI18n } from '../i18n/context'
 import { Section } from '../components/Section'
 import { ExternalLink } from '../components/ExternalLink'
 
 /** Seção de contato com os links do perfil. */
 export function Contact() {
+  const { s, profile } = useI18n()
   return (
-    <Section id="contato" title="Contato">
+    <Section id="contato" title={s.sections.contact}>
       <p className="mb-4 text-lg text-neutral-700 dark:text-neutral-300">
-        Vamos conversar? Me encontre nestes canais:
+        {s.contact.intro}
       </p>
       <ul className="flex flex-wrap gap-3">
         {profile.contacts.map((contact) => (

@@ -1,8 +1,9 @@
-import { profile } from '../data/profile'
+import { useI18n } from '../i18n/context'
 import { ExternalLink } from '../components/ExternalLink'
 
 /** Seção de abertura: nome, cargo, localização e chamadas para ação. */
 export function Hero() {
+  const { s, profile } = useI18n()
   return (
     <section
       id="inicio"
@@ -19,20 +20,20 @@ export function Hero() {
       </p>
 
       <nav
-        aria-label="Ações principais"
+        aria-label={s.hero.viewProjects}
         className="mt-8 flex flex-wrap items-center justify-center gap-3"
       >
         <a
           href="#projetos"
           className="rounded-lg bg-neutral-900 px-5 py-2.5 font-medium text-white transition-colors hover:bg-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
         >
-          Ver projetos
+          {s.hero.viewProjects}
         </a>
         <a
           href="#contato"
           className="rounded-lg border border-neutral-300 px-5 py-2.5 font-medium text-neutral-800 transition-colors hover:bg-neutral-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-900"
         >
-          Contato
+          {s.hero.contact}
         </a>
         {profile.contacts.map((contact) => (
           <ExternalLink

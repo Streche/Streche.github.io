@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react'
 import { About } from './About'
-import { profile } from '../data/profile'
+import { getProfile } from '../data/profile'
+
+const profile = getProfile('pt')
 
 describe('About', () => {
   it('renderiza o título da seção', () => {
