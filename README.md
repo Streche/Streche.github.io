@@ -65,6 +65,11 @@ npm install
 npm run dev
 ```
 
+## 🎨 Créditos
+
+Sprites e cenário do mini-game: **Jumper Pack** por [Kenney](https://kenney.nl)
+(licença CC0). Veja [CREDITS.md](./CREDITS.md).
+
 ## 📄 Licença
 
 [MIT](./LICENSE) © 2026 Carlos Eduardo

@@ -3,6 +3,7 @@ import {
   updateObstacle,
   isOffscreen,
   obstacleRect,
+  obstacleWidth,
   randomHeight,
   randomGap,
 } from './obstacle'
@@ -19,8 +20,12 @@ describe('obstacle', () => {
   })
 
   it('detecta quando saiu da tela pela esquerda', () => {
-    expect(isOffscreen({ x: -GAME.obstacle.width - 1, height: 30 })).toBe(true)
+    expect(isOffscreen({ x: -obstacleWidth(30) - 1, height: 30 })).toBe(true)
     expect(isOffscreen({ x: 0, height: 30 })).toBe(false)
+  })
+
+  it('largura deriva da altura mantendo o aspecto', () => {
+    expect(obstacleWidth(160)).toBe(117)
   })
 
   it('gera retângulo apoiado no chão', () => {
@@ -28,7 +33,7 @@ describe('obstacle', () => {
     expect(rect).toEqual({
       x: 100,
       y: GAME.groundY - 40,
-      width: GAME.obstacle.width,
+      width: obstacleWidth(40),
       height: 40,
     })
   })

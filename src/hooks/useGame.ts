@@ -3,6 +3,7 @@ import type { RefObject } from 'react'
 import { Game } from '../game/engine/game'
 import { createLoop } from '../game/engine/loop'
 import type { Loop } from '../game/engine/loop'
+import { loadGameAssets } from '../game/assets'
 import type { GameState } from '../game/types'
 
 /**
@@ -25,7 +26,8 @@ export function useGame(canvasRef: RefObject<HTMLCanvasElement | null>) {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    const game = new Game({ onChange: setState })
+    const assets = loadGameAssets()
+    const game = new Game({ onChange: setState, assets })
     gameRef.current = game
 
     const loop = createLoop((dt) => {
@@ -34,6 +36,11 @@ export function useGame(canvasRef: RefObject<HTMLCanvasElement | null>) {
     })
     loopRef.current = loop
     game.render(ctx) // desenha o frame inicial (tela "idle")
+
+    // Redesenha quando cada imagem terminar de carregar (a tela inicial é estática).
+    for (const image of Object.values(assets)) {
+      image.addEventListener('load', () => game.render(ctx), { once: true })
+    }
 
     // Teclas que rolam a página — bloqueadas enquanto o jogo está rodando
     // para "travar a tela" durante a partida.

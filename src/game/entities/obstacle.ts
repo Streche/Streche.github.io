@@ -20,16 +20,21 @@ export function updateObstacle(
   return { ...obstacle, x: obstacle.x - speed * dt }
 }
 
+/** Largura do obstáculo derivada da altura, mantendo o aspecto do sprite. */
+export function obstacleWidth(height: number): number {
+  return Math.round(height * GAME.obstacle.aspect)
+}
+
 /** Verdadeiro quando o obstáculo saiu completamente da tela pela esquerda. */
 export function isOffscreen(obstacle: Obstacle): boolean {
-  return obstacle.x + GAME.obstacle.width < 0
+  return obstacle.x + obstacleWidth(obstacle.height) < 0
 }
 
 export function obstacleRect(obstacle: Obstacle): Rect {
   return {
     x: obstacle.x,
     y: GAME.groundY - obstacle.height,
-    width: GAME.obstacle.width,
+    width: obstacleWidth(obstacle.height),
     height: obstacle.height,
   }
 }

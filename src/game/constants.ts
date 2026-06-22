@@ -18,9 +18,10 @@ export const GAME = {
     height: 36,
   },
   obstacle: {
-    width: 22,
-    minHeight: 26,
-    maxHeight: 50,
+    minHeight: 40,
+    maxHeight: 62,
+    /** Proporção largura/altura do sprite do cacto (117x160). */
+    aspect: 117 / 160,
     /** Distância (px) entre obstáculos. */
     gapMin: 320,
     gapMax: 620,
