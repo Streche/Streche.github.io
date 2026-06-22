@@ -16,9 +16,8 @@ export function Game() {
   return (
     <Section id="jogo" title="Mini-game">
       <p className="mb-4 text-neutral-700 dark:text-neutral-300">
-        Toque (ou clique) para começar. Durante a partida, pule com{' '}
-        <kbd>espaço</kbd>, <kbd>↑</kbd> ou um toque na tela. A rolagem fica
-        travada enquanto você joga.
+        Toque (ou clique) para começar. Durante a partida, pule com espaço ou um
+        toque na tela.
       </p>
 
       <div className="mb-3 flex justify-between font-mono text-sm text-neutral-700 dark:text-neutral-300">
