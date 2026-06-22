@@ -24,6 +24,25 @@ navegador. Hospedado no GitHub Pages.
 - **Dependabot** — atualizações de dependências e segurança
 - **TypeScript em modo `strict`**
 
+## 🗂️ Arquitetura
+
+Organização em camadas, com o **jogo desacoplado do React** (lógica pura,
+testável e independente de DOM):
+
+```
+src/
+  components/   # UI reutilizável genérica
+  sections/     # seções da página (Hero, Sobre, Competências, Projetos, Contato)
+  game/         # mini-game, sem dependência de React
+    engine/     # game loop, render, input
+    entities/   # player, obstáculos
+    systems/    # colisão, pontuação
+    types.ts    # tipos de domínio do jogo
+  hooks/        # hooks React (ponte entre o jogo e a UI)
+  data/         # modelo de conteúdo do portfólio (fonte única)
+  test/         # setup de testes
+```
+
 ## 🚀 Scripts
 
 | Comando                 | Descrição                              |
