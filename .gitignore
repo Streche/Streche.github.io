@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 coverage
+
+# Config local de automação do navegador (Playwright MCP via CDP)
+.mcp.json
+.playwright-mcp
