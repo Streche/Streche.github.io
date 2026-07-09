@@ -1,7 +1,11 @@
 import type { Lang } from '../i18n/strings'
 
+/** Identifica o ícone de cada categoria de competência. */
+export type SkillIcon = 'frontend' | 'backend' | 'data' | 'tools'
+
 export interface SkillGroup {
   label: string
+  icon: SkillIcon
   items: string[]
 }
 
@@ -39,7 +43,7 @@ interface ProfileData {
   role: Localized<string>
   about: Localized<string[]>
   location: Localized<string>
-  skills: { label: Localized<string>; items: string[] }[]
+  skills: { label: Localized<string>; icon: SkillIcon; items: string[] }[]
   contacts: Contact[]
   projects: {
     name: Localized<string>
@@ -75,19 +79,67 @@ const data: ProfileData = {
   skills: [
     {
       label: { pt: 'Front-end', en: 'Front-end' },
-      items: ['HTML5', 'CSS3', 'TypeScript', 'JavaScript', 'React', 'Angular'],
+      icon: 'frontend',
+      items: [
+        'React',
+        'TypeScript',
+        'JavaScript',
+        'Angular',
+        'Next.js',
+        'Vue',
+        'HTML5',
+        'CSS3',
+        'Stylus',
+        'Lit',
+      ],
     },
     {
       label: { pt: 'Back-end', en: 'Back-end' },
-      items: ['Node.js', 'Java', 'C#', 'Python'],
+      icon: 'backend',
+      items: [
+        'Node.js',
+        'Java',
+        'Python',
+        'C#',
+        'PHP',
+        'Ruby',
+        'C',
+        'C++',
+        'Swift',
+        'VB.NET',
+      ],
     },
     {
       label: { pt: 'Dados', en: 'Data' },
-      items: ['SQL', 'Power BI'],
+      icon: 'data',
+      items: [
+        'SQL',
+        'MySQL',
+        'MongoDB',
+        'Redis',
+        'Firebase',
+        'NoSQL',
+        'Power BI',
+        'MQL',
+        'CQL',
+      ],
     },
     {
       label: { pt: 'Ferramentas', en: 'Tools' },
-      items: ['Figma', 'Tailwind', 'Vercel', 'Chrome DevTools'],
+      icon: 'tools',
+      items: [
+        'Git',
+        'GitHub',
+        'Docker',
+        'Figma',
+        'Playwright',
+        'VS Code',
+        'Tailwind',
+        'Vercel',
+        'Netlify',
+        'Chrome DevTools',
+        'Eclipse',
+      ],
     },
   ],
   contacts: [
@@ -124,6 +176,7 @@ export function getProfile(lang: Lang): Profile {
     location: data.location[lang],
     skills: data.skills.map((group) => ({
       label: group.label[lang],
+      icon: group.icon,
       items: group.items,
     })),
     contacts: data.contacts,
