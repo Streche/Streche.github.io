@@ -1,10 +1,11 @@
+import { useState } from 'react'
 import type { ReactNode } from 'react'
 import { useI18n } from '../i18n/context'
 import { Section } from '../components/Section'
 import { Tag } from '../components/Tag'
-import type { SkillIcon } from '../data/profile'
+import type { SkillGroup, SkillIcon } from '../data/profile'
 
-/** Quantidade de competências exibidas por grupo (as principais). */
+/** Quantidade de competências exibidas por grupo antes de "Ver mais". */
 export const MAX_VISIBLE_SKILLS = 5
 
 const iconProps = {
@@ -49,33 +50,59 @@ const groupIcons: Record<SkillIcon, ReactNode> = {
   ),
 }
 
-/** Seção de competências: cada categoria em um card, com ícone e as principais. */
+/** Card de uma categoria: ícone, título, 5 principais e "Ver mais" para o resto. */
+function SkillCard({ group }: { group: SkillGroup }) {
+  const { s } = useI18n()
+  const [expanded, setExpanded] = useState(false)
+  const hiddenCount = group.items.length - MAX_VISIBLE_SKILLS
+  const hasMore = hiddenCount > 0
+  const visibleItems = expanded
+    ? group.items
+    : group.items.slice(0, MAX_VISIBLE_SKILLS)
+  const listId = `skills-${group.icon}`
+
+  return (
+    <div className="rounded-xl border border-neutral-200 p-6 dark:border-neutral-800">
+      <div className="flex items-center gap-3">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-neutral-200 text-neutral-700 dark:border-neutral-800 dark:text-neutral-300">
+          {groupIcons[group.icon]}
+        </span>
+        <h3 className="text-sm font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
+          {group.label}
+        </h3>
+      </div>
+
+      <ul id={listId} className="mt-4 flex flex-wrap gap-2">
+        {visibleItems.map((item) => (
+          <li key={item}>
+            <Tag>{item}</Tag>
+          </li>
+        ))}
+      </ul>
+
+      {hasMore && (
+        <button
+          type="button"
+          onClick={() => setExpanded((value) => !value)}
+          aria-expanded={expanded}
+          aria-controls={listId}
+          className="mt-4 text-sm font-medium text-neutral-900 underline underline-offset-4 transition hover:no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 dark:text-neutral-100"
+        >
+          {expanded ? s.skills.less : s.skills.more(hiddenCount)}
+        </button>
+      )}
+    </div>
+  )
+}
+
+/** Seção de competências: cada categoria em um card com as principais e "Ver mais". */
 export function Skills() {
   const { s, profile } = useI18n()
   return (
     <Section id="competencias" title={s.sections.skills}>
       <div className="grid gap-6 sm:grid-cols-2">
         {profile.skills.map((group) => (
-          <div
-            key={group.label}
-            className="rounded-xl border border-neutral-200 p-6 dark:border-neutral-800"
-          >
-            <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-neutral-200 text-neutral-700 dark:border-neutral-800 dark:text-neutral-300">
-                {groupIcons[group.icon]}
-              </span>
-              <h3 className="text-sm font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
-                {group.label}
-              </h3>
-            </div>
-            <ul className="mt-4 flex flex-wrap gap-2">
-              {group.items.slice(0, MAX_VISIBLE_SKILLS).map((item) => (
-                <li key={item}>
-                  <Tag>{item}</Tag>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <SkillCard key={group.label} group={group} />
         ))}
       </div>
     </Section>

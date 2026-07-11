@@ -28,6 +28,8 @@ export interface Strings {
   contact: { intro: string }
   projectsNav: { prev: string; next: string }
   project: { code: string; live: string }
+  skills: { more: (count: number) => string; less: string }
+  about: { more: string; less: string }
   game: {
     instructions: string
     score: string
@@ -67,6 +69,8 @@ export const strings: Record<Lang, Strings> = {
       next: 'Ver próximos projetos',
     },
     project: { code: 'Código', live: 'Ver ao vivo' },
+    skills: { more: (count) => `Ver mais (${count})`, less: 'Ver menos' },
+    about: { more: 'Ver mais', less: 'Ver menos' },
     game: {
       instructions:
         'Toque (ou clique) para começar. Durante a partida, pule com espaço ou um toque na tela.',
@@ -109,6 +113,8 @@ export const strings: Record<Lang, Strings> = {
       next: 'See next projects',
     },
     project: { code: 'Code', live: 'Live demo' },
+    skills: { more: (count) => `See ${count} more`, less: 'See less' },
+    about: { more: 'See more', less: 'See less' },
     game: {
       instructions:
         'Tap (or click) to start. During the match, jump with space or a tap on the screen.',

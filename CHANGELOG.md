@@ -5,6 +5,15 @@ Todas as mudanças notáveis deste projeto são registradas aqui.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.2.0] - 2026-07-11
+
+### Adicionado
+
+- Botão "Ver mais / Ver menos" em cada card de competências, revelando as demais
+  competências além das 5 principais.
+- Seção "Sobre mim" reorganizada em card, com "Ver mais" para exibir o último
+  parágrafo.
+
 ## [1.1.0] - 2026-07-09
 
 ### Adicionado
@@ -34,5 +43,6 @@ Primeira versão publicada do portfólio no GitHub Pages.
 - Cabeçalhos de segurança (CSP e referrer-policy) e favicon próprio com og:image.
 - Cobertura de testes das seções e da lógica do mini-game.
 
+[1.2.0]: https://github.com/Streche/Streche.github.io/releases/tag/v1.2.0
 [1.1.0]: https://github.com/Streche/Streche.github.io/releases/tag/v1.1.0
 [1.0.0]: https://github.com/Streche/Streche.github.io/releases/tag/v1.0.0
