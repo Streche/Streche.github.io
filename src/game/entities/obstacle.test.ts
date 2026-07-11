@@ -1,5 +1,6 @@
 import {
   createObstacle,
+  createWave,
   updateObstacle,
   isOffscreen,
   obstacleRect,
@@ -46,5 +47,30 @@ describe('obstacle', () => {
   it('randomGap respeita os limites (rand injetável)', () => {
     expect(randomGap(() => 0)).toBe(GAME.obstacle.gapMin)
     expect(randomGap(() => 1)).toBe(GAME.obstacle.gapMax)
+  })
+})
+
+describe('createWave', () => {
+  it('cria um único cacto quando não é dupla', () => {
+    const wave = createWave(false, () => 0.5)
+    expect(wave).toHaveLength(1)
+  })
+
+  it('cria uma dupla colada e transponível num pulo', () => {
+    // rand = 1 => alturas máximas => cactos mais largos (pior caso de largura).
+    const wave = createWave(true, () => 1)
+    expect(wave).toHaveLength(2)
+    const [a, b] = wave
+    if (!a || !b) return
+
+    // O segundo cacto nasce logo após o primeiro, separado pelo clusterGap.
+    expect(b.x).toBe(a.x + obstacleWidth(a.height) + GAME.obstacle.clusterGap)
+
+    // A dupla é mais estreita que a menor distância aérea possível do pulo,
+    // garantindo que sempre dá para transpor os dois de uma vez.
+    const span = b.x + obstacleWidth(b.height) - a.x
+    const jumpDuration = (2 * Math.abs(GAME.jumpVelocity)) / GAME.gravity
+    const minAirborne = GAME.speed.initial * jumpDuration
+    expect(span).toBeLessThan(minAirborne)
   })
 })

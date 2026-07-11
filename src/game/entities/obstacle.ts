@@ -50,3 +50,19 @@ export function randomGap(rand: () => number = Math.random): number {
   const { gapMin, gapMax } = GAME.obstacle
   return gapMin + rand() * (gapMax - gapMin)
 }
+
+/**
+ * Cria uma "leva" de obstáculos: um único cacto ou, quando `double`, dois cactos
+ * colados (separados por `clusterGap`), estreitos o bastante para serem
+ * transpostos num pulo só. Os obstáculos nascem à direita da tela.
+ */
+export function createWave(
+  double: boolean,
+  rand: () => number = Math.random,
+): Obstacle[] {
+  const first = createObstacle(randomHeight(rand))
+  if (!double) return [first]
+  const secondX =
+    first.x + obstacleWidth(first.height) + GAME.obstacle.clusterGap
+  return [first, { x: secondX, height: randomHeight(rand) }]
+}

@@ -5,6 +5,20 @@ Todas as mudanças notáveis deste projeto são registradas aqui.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.3.0] - 2026-07-11
+
+### Adicionado
+
+- Duplas ocasionais de cactos no mini-game, sempre transponíveis num pulo,
+  ficando mais frequentes conforme o jogo acelera.
+- Regra de "uma leva por vez": uma nova leva de obstáculos só surge depois que a
+  anterior sai da tela.
+
+### Alterado
+
+- Mini-game reequilibrado: obstáculos e pulo mais rápidos, com a dificuldade
+  subindo gradualmente ao longo da partida.
+
 ## [1.2.2] - 2026-07-11
 
 ### Alterado
@@ -58,6 +72,7 @@ Primeira versão publicada do portfólio no GitHub Pages.
 - Cabeçalhos de segurança (CSP e referrer-policy) e favicon próprio com og:image.
 - Cobertura de testes das seções e da lógica do mini-game.
 
+[1.3.0]: https://github.com/Streche/Streche.github.io/releases/tag/v1.3.0
 [1.2.2]: https://github.com/Streche/Streche.github.io/releases/tag/v1.2.2
 [1.2.1]: https://github.com/Streche/Streche.github.io/releases/tag/v1.2.1
 [1.2.0]: https://github.com/Streche/Streche.github.io/releases/tag/v1.2.0

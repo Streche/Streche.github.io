@@ -11,6 +11,7 @@ import {
 } from '../entities/player'
 import {
   createObstacle,
+  createWave,
   updateObstacle,
   isOffscreen,
   obstacleRect,
@@ -73,6 +74,11 @@ export class Game {
     }
   }
 
+  /** Quantidade de obstáculos atualmente na tela (observabilidade/testes). */
+  obstacleCount(): number {
+    return this.obstacles.length
+  }
+
   /** Emite o estado apenas quando algo visível muda (evita re-render a 60fps). */
   private emit(): void {
     const state = this.getState()
@@ -117,10 +123,15 @@ export class Game {
       .map((o) => updateObstacle(o, dt, speed))
       .filter((o) => !isOffscreen(o))
 
-    this.distanceToNext -= speed * dt
-    if (this.distanceToNext <= 0) {
-      this.obstacles.push(createObstacle(randomHeight()))
-      this.distanceToNext = randomGap()
+    // Uma leva por vez: só conta o intervalo para a próxima quando a tela está
+    // livre (a leva anterior já saiu). A leva pode ser um cacto ou uma dupla.
+    if (this.obstacles.length === 0) {
+      this.distanceToNext -= speed * dt
+      if (this.distanceToNext <= 0) {
+        const double = Math.random() < this.doubleChance()
+        this.obstacles.push(...createWave(double))
+        this.distanceToNext = randomGap()
+      }
     }
 
     // Colisão com margem (os sprites têm transparência nas bordas).
@@ -152,6 +163,14 @@ export class Game {
     return Math.floor(this.elapsed * 9) % 2 === 0
       ? a.playerWalk1
       : a.playerWalk2
+  }
+
+  /**
+   * Chance de a próxima leva ser uma dupla de cactos: zero nos primeiros
+   * segundos e crescendo com o tempo de jogo, até um teto de 45%.
+   */
+  private doubleChance(): number {
+    return Math.min(0.45, Math.max(0, (this.elapsed - 6) / 60))
   }
 
   private gameOver(): void {

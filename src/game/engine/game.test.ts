@@ -72,6 +72,23 @@ describe('Game', () => {
     expect(storage.saved ?? 0).toBeGreaterThan(0)
   })
 
+  it('não libera uma nova leva enquanto a atual está na tela', () => {
+    const game = new Game({ storage: fakeStorage() })
+    game.start()
+    expect(game.obstacleCount()).toBe(1)
+
+    // Enquanto a leva inicial (um cacto) continua na tela, a regra "uma leva
+    // por vez" deve impedir que qualquer nova leva apareça. O laço para quando
+    // a leva sai (count 0) ou o jogo acaba, sem depender de tempo fixo.
+    for (let i = 0; i < 600; i++) {
+      game.update(1 / 60)
+      if (game.getState().status !== 'running' || game.obstacleCount() === 0) {
+        break
+      }
+      expect(game.obstacleCount()).toBe(1)
+    }
+  })
+
   it('notifica mudanças via onChange', () => {
     const states: string[] = []
     const game = new Game({
