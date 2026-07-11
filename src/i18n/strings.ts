@@ -63,7 +63,7 @@ export const strings: Record<Lang, Strings> = {
       contact: 'Contato',
     },
     hero: { viewProjects: 'Ver projetos', contact: 'Contato' },
-    contact: { intro: 'Vamos conversar? Me encontre nestes canais:' },
+    contact: { intro: 'Vamos conversar? Encontre-me nestes canais:' },
     projectsNav: {
       prev: 'Ver projetos anteriores',
       next: 'Ver próximos projetos',

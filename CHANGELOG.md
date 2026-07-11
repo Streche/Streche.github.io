@@ -5,6 +5,13 @@ Todas as mudanças notáveis deste projeto são registradas aqui.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.2.2] - 2026-07-11
+
+### Alterado
+
+- Ajuste de norma culta no texto de contato: "Me encontre" passa a "Encontre-me"
+  (evita iniciar a frase com pronome átono).
+
 ## [1.2.1] - 2026-07-11
 
 ### Alterado
@@ -51,6 +58,7 @@ Primeira versão publicada do portfólio no GitHub Pages.
 - Cabeçalhos de segurança (CSP e referrer-policy) e favicon próprio com og:image.
 - Cobertura de testes das seções e da lógica do mini-game.
 
+[1.2.2]: https://github.com/Streche/Streche.github.io/releases/tag/v1.2.2
 [1.2.1]: https://github.com/Streche/Streche.github.io/releases/tag/v1.2.1
 [1.2.0]: https://github.com/Streche/Streche.github.io/releases/tag/v1.2.0
 [1.1.0]: https://github.com/Streche/Streche.github.io/releases/tag/v1.1.0
