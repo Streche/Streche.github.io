@@ -14,15 +14,14 @@ A pesquisa (2025/2026) apontou lacunas que recrutadores esperam: **Experiência*
 Objetivo do Grupo A: fechar essas três lacunas, mantendo o padrão do site
 (dados em `profile.ts` + componente de seção + i18n), sem quebrar o que já existe.
 
-## 2. Correção de dados (bloqueante, confirmar)
+## 2. Correção de dados (CONFIRMADA)
 
-Os **dois currículos** do usuário dizem **"Graduação em Sistemas de Informação"**
-na Estácio (previsão 2025.1). O site (e o LinkedIn) hoje dizem
-**"Pós-graduação em Information Technology"** — provável erro herdado do LinkedIn.
+O usuário confirmou: **Universidade Estácio de Sá — Graduação em Sistemas de
+Informação** (previsão 2025.1). O site (e o LinkedIn) hoje dizem
+**"Pós-graduação em Information Technology"** — erro herdado do LinkedIn.
 
 - **Ação:** corrigir o parágrafo 3 do "Sobre mim" (PT/EN) em `profile.ts` para
-  "Graduação em Sistemas de Informação (Estácio, previsão 2025.1)".
-- **Confirmar com o usuário** antes de publicar (é uma afirmação factual de credencial).
+  "Graduação em Sistemas de Informação (Estácio, previsão 2025.1)". Vai junto na v1.4.0.
 
 ## 3. Feature 1 — Seção "Experiência" (estrutura B: dois blocos)
 
@@ -64,8 +63,8 @@ Design técnico:
   traduzida e já com a Estácio correta).
 - Botão de download que serve o PDF conforme o idioma ativo (`lang` do i18n):
   PT → pt.pdf, EN → en.pdf. `download` + `rel="noopener"`.
-- Posição: no **Hero** (ao lado de "Ver projetos"/"Contato") e/ou na seção Contato.
-  Decidir na revisão; recomendação: Hero (visível nos primeiros 15s).
+- Posição (CONFIRMADA): em **ambos** — no **Hero** (ao lado de "Ver projetos"/
+  "Contato") e na seção **Contato**.
 - i18n: rótulo "Baixar CV / Download CV".
 - Observação: PDFs são servidos pelo mesmo domínio → compatível com a CSP atual.
 
@@ -85,15 +84,15 @@ Design técnico:
 Conclusão: fora o portfólio, quase não há material antigo que ajude; boa parte é
 coursework de 2019 e 3 repos **vazios** que **atrapalham** a imagem do perfil.
 
-### Recomendação (a decidir na revisão)
-- **Agora:** transformar o **próprio portfólio** num estudo de caso bem-feito
-  (problema → solução → resultado; destaques: mini-game em canvas, i18n, tema,
-  testes 44+, CI/CD, hardening de segurança) e deixar a **estrutura pronta** para
-  novos projetos.
-- **Opcional:** resgatar **`projeto` (CakePHP)** como 2º caso — exige documentar o
-  que a app faz + subir um demo. Decidir se vale.
-- **Bônus de recrutador (fora do site):** **limpar o GitHub** — apagar/arquivar os
-  repos vazios e triviais e fixar (pin) o portfólio. Perfil enxuto > perfil cheio.
+### Decisões (CONFIRMADAS)
+- **Portfólio como estudo de caso:** transformar o próprio portfólio num caso
+  bem-feito (problema → solução → resultado; destaques: mini-game em canvas, i18n,
+  tema, testes 44+, CI/CD, hardening) e deixar a **estrutura pronta** para novos.
+- **Resgatar `projeto` (CakePHP), SIM, em paralelo e SEPARADO do portfólio:** o
+  trabalho de documentação (README real do que a app faz) + demo acontece no
+  **próprio repo `Streche/projeto`**, não no repo do portfólio. Depois, o portfólio
+  só o referencia como projeto/estudo de caso (nome, descrição, link do repo/demo).
+- **NÃO limpar o GitHub** (manter os repositórios como estão).
 - **Futuro (Grupo C?):** construir 1–2 projetos novos e reais (recrutadores querem
   3–5 apps funcionando) — vira um incremento próprio.
 
@@ -108,13 +107,18 @@ Design técnico (estudo de caso):
   chave de API, ajuste de CSP e tem custo).
 - Construir projetos novos do zero (possível Grupo C).
 
-## 7. Decisões em aberto para 2026-07-12
-1. Confirmar credencial da Estácio (**Graduação em Sistemas de Informação**?).
-2. Estudos de caso: só o portfólio agora, ou também resgatar o `projeto` CakePHP?
-3. Quer que eu já limpe o GitHub (apagar repos vazios/triviais e fixar o bom)?
-4. Posição do botão "Baixar CV": Hero, Contato, ou ambos?
-5. Ordem de implementação sugerida: (1) Experiência + correção Estácio → v1.4.0;
-   (2) CV bilíngue → v1.5.0; (3) Estudos de caso → v1.6.0. OK dividir assim?
+## 7. Decisões confirmadas (2026-07-11)
+1. **Estácio confirmada:** é a universidade; o curso é **Graduação em Sistemas de
+   Informação**. Corrigir o "Sobre mim" (o "pós-graduação em Information Technology"
+   está errado).
+2. **Resgatar o CakePHP, sim — como projeto SEPARADO/paralelo** (trabalho no próprio
+   repo `Streche/projeto`: README real + demo), **fora** do repo do portfólio. O
+   portfólio apenas o referencia como estudo de caso/projeto.
+3. **Não limpar o GitHub** (manter os repositórios como estão).
+4. **Botão "Baixar CV" em ambos:** Hero e Contato.
+5. **Ordem de versões OK:** v1.4.0 Experiência + correção Estácio → v1.5.0 CV
+   bilíngue → v1.6.0 estudos de caso. O resgate do CakePHP corre em paralelo, no
+   seu próprio repo.
 
 ## 8. Plano de versões (proposto)
 - v1.4.0 — Seção Experiência + correção da Estácio no "Sobre mim".
