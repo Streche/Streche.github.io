@@ -45,6 +45,7 @@ export interface Strings {
     running: string
   }
   controls: { theme: string; language: string }
+  cv: string
 }
 
 export const strings: Record<Lang, Strings> = {
@@ -97,6 +98,7 @@ export const strings: Record<Lang, Strings> = {
       theme: 'Alternar tema claro/escuro',
       language: 'Switch to English',
     },
+    cv: 'Baixar CV',
   },
   en: {
     nav: {
@@ -147,5 +149,6 @@ export const strings: Record<Lang, Strings> = {
       theme: 'Toggle light/dark theme',
       language: 'Mudar para Português',
     },
+    cv: 'Download CV',
   },
 }

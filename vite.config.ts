@@ -8,6 +8,14 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   base: '/',
   plugins: [react(), tailwindcss()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        cv: 'cv.html',
+      },
+    },
+  },
   test: {
     globals: true,
     environment: 'jsdom',

@@ -3,7 +3,7 @@ import { ExternalLink } from '../components/ExternalLink'
 
 /** Seção de abertura: nome, cargo, localização e chamadas para ação. */
 export function Hero() {
-  const { s, profile } = useI18n()
+  const { s, profile, lang } = useI18n()
   return (
     <section
       id="inicio"
@@ -34,6 +34,14 @@ export function Hero() {
           className="rounded-lg border border-neutral-300 px-5 py-2.5 font-medium text-neutral-800 transition-colors hover:bg-neutral-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-900"
         >
           {s.hero.contact}
+        </a>
+        <a
+          href={`/cv.html?lang=${lang}`}
+          target="_blank"
+          rel="noopener"
+          className="rounded-lg border border-neutral-300 px-5 py-2.5 font-medium text-neutral-800 transition-colors hover:bg-neutral-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-900"
+        >
+          {s.cv}
         </a>
         {profile.contacts.map((contact) => (
           <ExternalLink

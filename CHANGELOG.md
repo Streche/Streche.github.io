@@ -5,6 +5,14 @@ Todas as mudanças notáveis deste projeto são registradas aqui.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.5.0] - 2026-07-12
+
+### Adicionado
+
+- Botão "Baixar CV" no Hero e no Contato, abrindo uma página de currículo (PT/EN)
+  gerada a partir dos dados do site e otimizada para "Salvar como PDF" (A4). Contato
+  do CV limitado ao e-mail, por privacidade.
+
 ## [1.4.1] - 2026-07-12
 
 ### Alterado

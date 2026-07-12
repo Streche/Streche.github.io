@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+
+/* Currículo pensado para impressão em A4 (sempre claro). */
+@page {
+  size: A4;
+  margin: 14mm;
+}
