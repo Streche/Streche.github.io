@@ -5,6 +5,18 @@ Todas as mudanças notáveis deste projeto são registradas aqui.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.4.0] - 2026-07-12
+
+### Adicionado
+
+- Seção "Experiência" com dois blocos: experiência profissional (YMCA/EUA, Marcris,
+  Linkcell/Samsung) e formação acadêmica (Estácio, Senac RJ, ensino médio).
+
+### Corrigido
+
+- "Sobre mim": a formação na Estácio passa a constar como "Graduação em Sistemas de
+  Informação" (antes constava, por engano, "pós-graduação em Information Technology").
+
 ## [1.3.0] - 2026-07-11
 
 ### Adicionado

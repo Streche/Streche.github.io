@@ -3,6 +3,7 @@ import { HeaderControls } from './components/HeaderControls'
 import { Hero } from './sections/Hero'
 import { Game } from './sections/Game'
 import { About } from './sections/About'
+import { Experience } from './sections/Experience'
 import { Skills } from './sections/Skills'
 import { Projects } from './sections/Projects'
 import { Contact } from './sections/Contact'
@@ -13,6 +14,7 @@ function App() {
   const navLinks = [
     { href: '#jogo', label: s.nav.game },
     { href: '#sobre', label: s.nav.about },
+    { href: '#experiencia', label: s.nav.experience },
     { href: '#competencias', label: s.nav.skills },
     { href: '#projetos', label: s.nav.projects },
     { href: '#contato', label: s.nav.contact },
@@ -58,6 +60,7 @@ function App() {
         <Hero />
         <Game />
         <About />
+        <Experience />
         <Skills />
         <Projects />
         <Contact />

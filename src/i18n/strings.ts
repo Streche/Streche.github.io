@@ -11,6 +11,7 @@ export interface Strings {
   nav: {
     game: string
     about: string
+    experience: string
     skills: string
     projects: string
     contact: string
@@ -19,11 +20,13 @@ export interface Strings {
   primaryNav: string
   sections: {
     about: string
+    experience: string
     skills: string
     projects: string
     game: string
     contact: string
   }
+  experience: { work: string; education: string }
   hero: { viewProjects: string; contact: string }
   contact: { intro: string }
   projectsNav: { prev: string; next: string }
@@ -49,6 +52,7 @@ export const strings: Record<Lang, Strings> = {
     nav: {
       game: 'Jogo',
       about: 'Sobre',
+      experience: 'Experiência',
       skills: 'Competências',
       projects: 'Projetos',
       contact: 'Contato',
@@ -57,10 +61,15 @@ export const strings: Record<Lang, Strings> = {
     primaryNav: 'Navegação principal',
     sections: {
       about: 'Sobre mim',
+      experience: 'Experiência',
       skills: 'Competências',
       projects: 'Projetos',
       game: 'Mini-game',
       contact: 'Contato',
+    },
+    experience: {
+      work: 'Experiência profissional',
+      education: 'Formação acadêmica',
     },
     hero: { viewProjects: 'Ver projetos', contact: 'Contato' },
     contact: { intro: 'Vamos conversar? Encontre-me nestes canais:' },
@@ -93,6 +102,7 @@ export const strings: Record<Lang, Strings> = {
     nav: {
       game: 'Game',
       about: 'About',
+      experience: 'Experience',
       skills: 'Skills',
       projects: 'Projects',
       contact: 'Contact',
@@ -101,10 +111,15 @@ export const strings: Record<Lang, Strings> = {
     primaryNav: 'Main navigation',
     sections: {
       about: 'About me',
+      experience: 'Experience',
       skills: 'Skills',
       projects: 'Projects',
       game: 'Mini-game',
       contact: 'Contact',
+    },
+    experience: {
+      work: 'Professional experience',
+      education: 'Education',
     },
     hero: { viewProjects: 'View projects', contact: 'Contact' },
     contact: { intro: "Let's talk? Find me on these channels:" },
