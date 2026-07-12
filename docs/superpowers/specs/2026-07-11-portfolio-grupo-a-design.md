@@ -32,8 +32,11 @@ Experiência profissional:
 - **YMCA — Estados Unidos** · Instrutor e Orientador · Trabalho temporário, 2025 ·
   ambiente multicultural, suporte a 50+ participantes.
 - **Marcris Serviços** · Auxiliar Técnico em Eletrônica / Supervisor · 2022–2025 ·
-  microeletrônica e CIs para sistemas embarcados; liderou 5 técnicos; −15% no tempo
-  de diagnóstico de falhas.
+  microeletrônica e CIs para sistemas embarcados; controle e manutenção de aparelhos
+  eletrônicos; −15% no tempo de diagnóstico de falhas.
+  (Nota: liderança de equipe REMOVIDA a pedido do usuário — corrigir também nos CVs
+  ao fazer a v1.5.0: o `Resume_Carlos_Dev.pdf` ainda menciona "supervised a team of 5"
+  e "technical team management".)
 - **Linkcell Celulares / Samsung** · Auxiliar Administrativo e Técnico · 2020–2022 ·
   suporte Samsung; −20% no tempo de manutenção preventiva.
 

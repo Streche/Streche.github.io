@@ -93,12 +93,12 @@ const data: ProfileData = {
   about: {
     pt: [
       'Sou o Carlos Eduardo, desenvolvedor full stack e carioca de coração. Muito antes de programar, eu já era o tipo de pessoa que abria os aparelhos só para entender como funcionavam por dentro. Foi essa curiosidade que me levou da eletrônica ao desenvolvimento de software. Nasci e moro no Rio de Janeiro, mas também vivi nos Estados Unidos, de onde trouxe o inglês fluente e o gosto por conhecer o mundo.',
-      'Minha base técnica vem de mais de 5 anos com suporte técnico, eletrônica e sistemas embarcados. Passei pela Samsung e pela MARCRIS Solutions, onde cheguei a supervisionar uma equipe de cinco técnicos e a responder por projetos críticos. Foi ali que aprendi a diagnosticar problemas com calma, cuidar dos detalhes e entregar no prazo, reduzindo em 15% o tempo de diagnóstico de falhas em um time e em 20% a manutenção preventiva em outro.',
+      'Minha base técnica vem de mais de 5 anos com suporte técnico, eletrônica e sistemas embarcados. Passei pela Samsung e pela MARCRIS Solutions, onde fiquei responsável pelo controle e manutenção de aparelhos eletrônicos e por projetos críticos. Foi ali que aprendi a diagnosticar problemas com calma, cuidar dos detalhes e entregar no prazo, reduzindo em 15% o tempo de diagnóstico de falhas em uma empresa e em 20% a manutenção preventiva em outra.',
       'Hoje aplico essa mesma cabeça de diagnóstico ao código, com o front-end como especialidade (HTML5, CSS3, TypeScript, React e Angular), apoiado por Node.js, Java, C#, Python e SQL no back-end. No dia a dia domino ferramentas como Figma, Tailwind, Vercel e o Chrome DevTools, e tenho graduação em Sistemas de Informação pela Estácio. O que me desafia é o problema difícil, aquele que pede para entender o todo antes de escrever a primeira linha. E o que me motiva é transformar esse quebra-cabeça em soluções eficientes e confiáveis.',
     ],
     en: [
       "I'm Carlos Eduardo, a full stack developer and a carioca at heart. Long before I wrote code, I was the kind of person who opened up gadgets just to understand how they worked inside, and that curiosity is what took me from electronics to software development. I was born and live in Rio de Janeiro, but I've also lived in the United States, which gave me fluent English and a taste for seeing the world.",
-      "My technical foundation comes from more than 5 years in technical support, electronics and embedded systems. I worked at Samsung and at MARCRIS Solutions, where I supervised a team of five technicians and was responsible for critical projects. That's where I learned to diagnose problems calmly, care about the details and deliver on time, cutting fault-diagnosis time by 15% on one team and preventive maintenance by 20% on another.",
+      "My technical foundation comes from more than 5 years in technical support, electronics and embedded systems. I worked at Samsung and at MARCRIS Solutions, where I was responsible for the control and maintenance of electronic devices and for critical projects. That's where I learned to diagnose problems calmly, care about the details and deliver on time, cutting fault-diagnosis time by 15% at one company and preventive maintenance by 20% at another.",
       'Today I bring that same diagnostic mindset to code, with front-end as my specialty (HTML5, CSS3, TypeScript, React and Angular), backed by Node.js, Java, C#, Python and SQL on the server side. Day to day I work with tools like Figma, Tailwind, Vercel and Chrome DevTools, and I hold a degree in Information Systems from Estácio. What challenges me is the hard problem, the one that asks you to understand the whole before writing the first line. And what motivates me is turning that puzzle into efficient, reliable solutions.',
     ],
   },
@@ -194,12 +194,12 @@ const data: ProfileData = {
       bullets: {
         pt: [
           'Microeletrônica e circuitos integrados para sistemas embarcados, computadores e celulares.',
-          'Liderou uma equipe de 5 técnicos, garantindo qualidade e prazos em projetos críticos.',
+          'Responsável pelo controle e manutenção de aparelhos eletrônicos.',
           'Reduziu em 15% o tempo de diagnóstico de falhas.',
         ],
         en: [
           'Microelectronics and integrated circuits for embedded systems, computers and mobile phones.',
-          'Led a team of 5 technicians, ensuring quality and deadlines on critical projects.',
+          'Responsible for the control and maintenance of electronic devices.',
           'Reduced fault-diagnosis time by 15%.',
         ],
       },

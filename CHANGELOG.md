@@ -5,6 +5,13 @@ Todas as mudanças notáveis deste projeto são registradas aqui.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.4.1] - 2026-07-12
+
+### Alterado
+
+- Marcris (Experiência e "Sobre mim"): removida a menção a liderança de equipe;
+  incluída a responsabilidade pelo controle e manutenção de aparelhos eletrônicos.
+
 ## [1.4.0] - 2026-07-12
 
 ### Adicionado
