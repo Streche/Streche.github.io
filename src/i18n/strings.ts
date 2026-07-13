@@ -14,6 +14,7 @@ export interface Strings {
     experience: string
     skills: string
     projects: string
+    ask: string
     contact: string
   }
   skipToContent: string
@@ -24,8 +25,10 @@ export interface Strings {
     skills: string
     projects: string
     game: string
+    ask: string
     contact: string
   }
+  ask: { intro: string }
   experience: { work: string; education: string }
   hero: { viewProjects: string; contact: string }
   contact: { intro: string }
@@ -63,6 +66,7 @@ export const strings: Record<Lang, Strings> = {
       experience: 'Experiência',
       skills: 'Competências',
       projects: 'Projetos',
+      ask: 'Pergunte',
       contact: 'Contato',
     },
     skipToContent: 'Pular para o conteúdo',
@@ -73,8 +77,10 @@ export const strings: Record<Lang, Strings> = {
       skills: 'Competências',
       projects: 'Projetos',
       game: 'Mini-game',
+      ask: 'Pergunte sobre mim',
       contact: 'Contato',
     },
+    ask: { intro: 'Clique numa pergunta e eu respondo aqui.' },
     experience: {
       work: 'Experiência profissional',
       education: 'Formação acadêmica',
@@ -121,6 +127,7 @@ export const strings: Record<Lang, Strings> = {
       experience: 'Experience',
       skills: 'Skills',
       projects: 'Projects',
+      ask: 'Ask',
       contact: 'Contact',
     },
     skipToContent: 'Skip to content',
@@ -131,8 +138,10 @@ export const strings: Record<Lang, Strings> = {
       skills: 'Skills',
       projects: 'Projects',
       game: 'Mini-game',
+      ask: 'Ask me anything',
       contact: 'Contact',
     },
+    ask: { intro: "Click a question and I'll answer here." },
     experience: {
       work: 'Professional experience',
       education: 'Education',

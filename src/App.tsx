@@ -6,6 +6,7 @@ import { About } from './sections/About'
 import { Experience } from './sections/Experience'
 import { Skills } from './sections/Skills'
 import { Projects } from './sections/Projects'
+import { Ask } from './sections/Ask'
 import { Contact } from './sections/Contact'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     { href: '#experiencia', label: s.nav.experience },
     { href: '#competencias', label: s.nav.skills },
     { href: '#projetos', label: s.nav.projects },
+    { href: '#pergunte', label: s.nav.ask },
     { href: '#contato', label: s.nav.contact },
   ]
 
@@ -63,6 +65,7 @@ function App() {
         <Experience />
         <Skills />
         <Projects />
+        <Ask />
         <Contact />
       </main>
 

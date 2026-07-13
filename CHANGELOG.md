@@ -5,6 +5,14 @@ Todas as mudanças notáveis deste projeto são registradas aqui.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.8.0] - 2026-07-13
+
+### Adicionado
+
+- Seção "Pergunte sobre mim": um chat guiado (click para perguntar) com respostas
+  prontas, 100% estático e sem custo. O visitante clica numa pergunta e recebe a
+  resposta em PT/EN.
+
 ## [1.7.0] - 2026-07-13
 
 ### Adicionado
