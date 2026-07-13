@@ -5,6 +5,13 @@ Todas as mudanças notáveis deste projeto são registradas aqui.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.8.1] - 2026-07-13
+
+### Alterado
+
+- "Pergunte sobre mim": cada pergunta clicada substitui a resposta anterior (uma
+  por vez) e os botões permanecem sempre visíveis, com destaque no ativo.
+
 ## [1.8.0] - 2026-07-13
 
 ### Adicionado
