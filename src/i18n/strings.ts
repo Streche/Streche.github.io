@@ -98,7 +98,7 @@ export const strings: Record<Lang, Strings> = {
       theme: 'Alternar tema claro/escuro',
       language: 'Switch to English',
     },
-    cv: 'Baixar CV',
+    cv: 'Currículo',
   },
   en: {
     nav: {
