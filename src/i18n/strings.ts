@@ -31,6 +31,13 @@ export interface Strings {
   contact: { intro: string }
   projectsNav: { prev: string; next: string }
   project: { code: string; live: string }
+  caseStudy: {
+    show: string
+    hide: string
+    problem: string
+    solution: string
+    results: string
+  }
   skills: { more: (count: number) => string; less: string }
   about: { more: string; less: string }
   game: {
@@ -79,6 +86,13 @@ export const strings: Record<Lang, Strings> = {
       next: 'Ver próximos projetos',
     },
     project: { code: 'Código', live: 'Ver ao vivo' },
+    caseStudy: {
+      show: 'Ver estudo de caso',
+      hide: 'Ver menos',
+      problem: 'Problema',
+      solution: 'Solução',
+      results: 'Resultado',
+    },
     skills: { more: (count) => `Ver mais (${count})`, less: 'Ver menos' },
     about: { more: 'Ver mais', less: 'Ver menos' },
     game: {
@@ -130,6 +144,13 @@ export const strings: Record<Lang, Strings> = {
       next: 'See next projects',
     },
     project: { code: 'Code', live: 'Live demo' },
+    caseStudy: {
+      show: 'View case study',
+      hide: 'Show less',
+      problem: 'Problem',
+      solution: 'Solution',
+      results: 'Results',
+    },
     skills: { more: (count) => `See ${count} more`, less: 'See less' },
     about: { more: 'See more', less: 'See less' },
     game: {

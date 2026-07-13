@@ -3,6 +3,95 @@ import { useI18n } from '../i18n/context'
 import { Section } from '../components/Section'
 import { Tag } from '../components/Tag'
 import { ExternalLink } from '../components/ExternalLink'
+import type { Project } from '../data/profile'
+
+/** Card de um projeto, com "Ver estudo de caso" expansível (quando houver). */
+function ProjectCard({ project }: { project: Project }) {
+  const { s } = useI18n()
+  const [expanded, setExpanded] = useState(false)
+  const cs = project.caseStudy
+  const detailId = `caso-${project.name.replace(/\s+/g, '-')}`
+
+  return (
+    <li className="flex w-72 shrink-0 snap-start flex-col rounded-xl border border-neutral-200 p-6 sm:w-80 dark:border-neutral-800">
+      <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+        {project.name}
+      </h3>
+      <p className="mt-2 flex-1 text-neutral-700 dark:text-neutral-300">
+        {project.description}
+      </p>
+      <ul className="mt-4 flex flex-wrap gap-2">
+        {project.tags.map((tag) => (
+          <li key={tag}>
+            <Tag>{tag}</Tag>
+          </li>
+        ))}
+      </ul>
+
+      {cs && expanded && (
+        <dl
+          id={detailId}
+          className="mt-4 space-y-2 border-t border-neutral-200 pt-4 text-sm dark:border-neutral-800"
+        >
+          <div>
+            <dt className="font-semibold text-neutral-900 dark:text-neutral-100">
+              {s.caseStudy.problem}
+            </dt>
+            <dd className="text-neutral-700 dark:text-neutral-300">
+              {cs.problem}
+            </dd>
+          </div>
+          <div>
+            <dt className="font-semibold text-neutral-900 dark:text-neutral-100">
+              {s.caseStudy.solution}
+            </dt>
+            <dd className="text-neutral-700 dark:text-neutral-300">
+              {cs.solution}
+            </dd>
+          </div>
+          <div>
+            <dt className="font-semibold text-neutral-900 dark:text-neutral-100">
+              {s.caseStudy.results}
+            </dt>
+            <dd className="text-neutral-700 dark:text-neutral-300">
+              {cs.results}
+            </dd>
+          </div>
+        </dl>
+      )}
+
+      <div className="mt-4 flex flex-wrap items-center gap-4 text-sm font-medium">
+        {project.repoUrl && (
+          <ExternalLink
+            href={project.repoUrl}
+            className="text-neutral-900 underline underline-offset-4 hover:no-underline dark:text-neutral-100"
+          >
+            {s.project.code}
+          </ExternalLink>
+        )}
+        {project.liveUrl && (
+          <ExternalLink
+            href={project.liveUrl}
+            className="text-neutral-900 underline underline-offset-4 hover:no-underline dark:text-neutral-100"
+          >
+            {s.project.live}
+          </ExternalLink>
+        )}
+        {cs && (
+          <button
+            type="button"
+            onClick={() => setExpanded((value) => !value)}
+            aria-expanded={expanded}
+            aria-controls={detailId}
+            className="text-neutral-900 underline underline-offset-4 hover:no-underline dark:text-neutral-100"
+          >
+            {expanded ? s.caseStudy.hide : s.caseStudy.show}
+          </button>
+        )}
+      </div>
+    </li>
+  )
+}
 
 /** Seção de projetos com rolagem horizontal e setas (laterais). */
 export function Projects() {
@@ -59,42 +148,7 @@ export function Projects() {
           className="flex flex-1 snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-2"
         >
           {profile.projects.map((project) => (
-            <li
-              key={project.name}
-              className="flex w-72 shrink-0 snap-start flex-col rounded-xl border border-neutral-200 p-6 sm:w-80 dark:border-neutral-800"
-            >
-              <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
-                {project.name}
-              </h3>
-              <p className="mt-2 flex-1 text-neutral-700 dark:text-neutral-300">
-                {project.description}
-              </p>
-              <ul className="mt-4 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <li key={tag}>
-                    <Tag>{tag}</Tag>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-4 flex gap-4 text-sm font-medium">
-                {project.repoUrl && (
-                  <ExternalLink
-                    href={project.repoUrl}
-                    className="text-neutral-900 underline underline-offset-4 hover:no-underline dark:text-neutral-100"
-                  >
-                    {s.project.code}
-                  </ExternalLink>
-                )}
-                {project.liveUrl && (
-                  <ExternalLink
-                    href={project.liveUrl}
-                    className="text-neutral-900 underline underline-offset-4 hover:no-underline dark:text-neutral-100"
-                  >
-                    {s.project.live}
-                  </ExternalLink>
-                )}
-              </div>
-            </li>
+            <ProjectCard key={project.name} project={project} />
           ))}
         </ul>
 

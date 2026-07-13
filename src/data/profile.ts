@@ -17,12 +17,19 @@ export interface Contact {
   href: string
 }
 
+export interface CaseStudy {
+  problem: string
+  solution: string
+  results: string
+}
+
 export interface Project {
   name: string
   description: string
   tags: string[]
   repoUrl?: string
   liveUrl?: string
+  caseStudy?: CaseStudy
 }
 
 export interface ExperienceItem {
@@ -77,6 +84,11 @@ interface ProfileData {
     tags: string[]
     repoUrl?: string
     liveUrl?: string
+    caseStudy?: {
+      problem: Localized<string>
+      solution: Localized<string>
+      results: Localized<string>
+    }
   }[]
 }
 
@@ -267,6 +279,20 @@ const data: ProfileData = {
       tags: ['React', 'TypeScript', 'Canvas', 'Tailwind'],
       repoUrl: 'https://github.com/Streche/Streche.github.io',
       liveUrl: 'https://streche.github.io',
+      caseStudy: {
+        problem: {
+          pt: 'Eu precisava me destacar para recrutadores com algo além de um currículo, provando habilidade técnica de verdade.',
+          en: 'I needed to stand out to recruiters with more than a résumé, proving real technical skill.',
+        },
+        solution: {
+          pt: 'Construí este site do zero em React, TypeScript e Tailwind: dois idiomas (PT/EN), tema claro/escuro, um mini-game 2D em canvas, testes automatizados e deploy contínuo.',
+          en: 'I built this site from scratch in React, TypeScript and Tailwind: two languages (PT/EN), light/dark theme, a 2D canvas mini-game, automated tests and continuous deployment.',
+        },
+        results: {
+          pt: 'Um portfólio rápido e acessível, com dezenas de testes, CI/CD no GitHub Pages e cabeçalhos de segurança (CSP).',
+          en: 'A fast, accessible portfolio, with dozens of tests, CI/CD on GitHub Pages and security headers (CSP).',
+        },
+      },
     },
   ],
 }
@@ -301,6 +327,11 @@ export function getProfile(lang: Lang): Profile {
       tags: project.tags,
       repoUrl: project.repoUrl,
       liveUrl: project.liveUrl,
+      caseStudy: project.caseStudy && {
+        problem: project.caseStudy.problem[lang],
+        solution: project.caseStudy.solution[lang],
+        results: project.caseStudy.results[lang],
+      },
     })),
   }
 }

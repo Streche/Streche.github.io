@@ -5,6 +5,13 @@ Todas as mudanças notáveis deste projeto são registradas aqui.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.6.0] - 2026-07-13
+
+### Adicionado
+
+- Estudo de caso expansível nos cards de projeto (Problema, Solução, Resultado),
+  começando pelo próprio portfólio. A estrutura fica pronta para novos projetos.
+
 ## [1.5.1] - 2026-07-13
 
 ### Alterado
