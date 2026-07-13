@@ -1,18 +1,26 @@
-# Streche.github.io — Portfólio
+# Portfólio de Carlos Eduardo
 
-Portfólio pessoal de **Carlos Eduardo** — Desenvolvedor Full Stack — com um
+Portfólio pessoal de **Carlos Eduardo**, desenvolvedor full stack, com um
 mini-game 2D integrado (estilo endless-runner) e recorde pessoal salvo no
-navegador. Hospedado no GitHub Pages.
+navegador. Bilíngue (PT/EN), com tema claro/escuro, currículo integrado e um
+painel de acessibilidade. Hospedado no GitHub Pages.
 
 🔗 **Ao vivo:** https://streche.github.io
+
+## Lighthouse
+
+![Performance](https://img.shields.io/badge/Lighthouse%20Performance-99-brightgreen)
+![Accessibility](https://img.shields.io/badge/Accessibility-100-brightgreen)
+![Best Practices](https://img.shields.io/badge/Best%20Practices-100-brightgreen)
+![SEO](https://img.shields.io/badge/SEO-100-brightgreen)
 
 ## 🧱 Stack
 
 - **TypeScript** + **React 19**
 - **Vite** (build e dev server)
 - **Tailwind CSS** (estilo)
-- **HTML5 Canvas** (mini-game 2D) — _a implementar_
-- **localStorage** (recorde pessoal) — _a implementar_
+- **HTML5 Canvas** (mini-game 2D)
+- **localStorage** (preferências e recorde pessoal)
 
 ## 🛡️ Qualidade e boas práticas
 
@@ -32,7 +40,7 @@ testável e independente de DOM):
 ```
 src/
   components/   # UI reutilizável genérica
-  sections/     # seções da página (Hero, Sobre, Competências, Projetos, Contato)
+  sections/     # seções da página (Hero, Sobre, Experiência, Competências, Projetos, Pergunte, Contato)
   game/         # mini-game, sem dependência de React
     engine/     # game loop, render, input
     entities/   # player, obstáculos
