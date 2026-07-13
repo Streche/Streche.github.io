@@ -56,6 +56,17 @@ export interface Strings {
   }
   controls: { theme: string; language: string }
   cv: string
+  a11y: {
+    title: string
+    fontSize: string
+    increase: string
+    decrease: string
+    contrast: string
+    links: string
+    spacing: string
+    motion: string
+    reset: string
+  }
 }
 
 export const strings: Record<Lang, Strings> = {
@@ -119,6 +130,17 @@ export const strings: Record<Lang, Strings> = {
       language: 'Switch to English',
     },
     cv: 'Currículo',
+    a11y: {
+      title: 'Acessibilidade',
+      fontSize: 'Tamanho da fonte',
+      increase: 'Aumentar fonte',
+      decrease: 'Diminuir fonte',
+      contrast: 'Alto contraste',
+      links: 'Destacar links',
+      spacing: 'Mais espaçamento',
+      motion: 'Reduzir animações',
+      reset: 'Redefinir',
+    },
   },
   en: {
     nav: {
@@ -180,5 +202,16 @@ export const strings: Record<Lang, Strings> = {
       language: 'Mudar para Português',
     },
     cv: 'Download CV',
+    a11y: {
+      title: 'Accessibility',
+      fontSize: 'Font size',
+      increase: 'Increase font',
+      decrease: 'Decrease font',
+      contrast: 'High contrast',
+      links: 'Highlight links',
+      spacing: 'More spacing',
+      motion: 'Reduce motion',
+      reset: 'Reset',
+    },
   },
 }

@@ -5,6 +5,15 @@ Todas as mudanças notáveis deste projeto são registradas aqui.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.9.0] - 2026-07-13
+
+### Adicionado
+
+- Botão fixo de acessibilidade (lateral): painel com ajuste de tamanho de fonte,
+  alto contraste, destacar links, mais espaçamento e reduzir animações. As
+  preferências ficam salvas no navegador. Solução própria, sem scripts externos
+  (compatível com a CSP).
+
 ## [1.8.1] - 2026-07-13
 
 ### Alterado

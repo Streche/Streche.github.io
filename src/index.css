@@ -37,3 +37,34 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/*
+  Preferências do widget de acessibilidade (classes aplicadas no <html>).
+  O tamanho da fonte é ajustado via font-size inline no <html> (escala rem).
+*/
+.a11y-links a {
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+}
+
+.a11y-spacing :where(p, li, dd, dt, h1, h2, h3, h4) {
+  line-height: 1.9 !important;
+  letter-spacing: 0.03em !important;
+  word-spacing: 0.08em !important;
+}
+
+.a11y-contrast :where(p, li, dd, dt) {
+  color: #171717 !important;
+}
+.a11y-contrast.dark :where(p, li, dd, dt) {
+  color: #fafafa !important;
+}
+
+.a11y-reduce-motion *,
+.a11y-reduce-motion *::before,
+.a11y-reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}

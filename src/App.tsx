@@ -1,5 +1,6 @@
 import { useI18n } from './i18n/context'
 import { HeaderControls } from './components/HeaderControls'
+import { A11yWidget } from './components/A11yWidget'
 import { Hero } from './sections/Hero'
 import { Game } from './sections/Game'
 import { About } from './sections/About'
@@ -72,6 +73,8 @@ function App() {
       <footer className="border-t border-neutral-200 py-8 text-center text-sm text-neutral-500 dark:border-neutral-800 dark:text-neutral-400">
         © {new Date().getFullYear()} {profile.name}
       </footer>
+
+      <A11yWidget />
     </div>
   )
 }
