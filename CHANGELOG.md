@@ -5,6 +5,13 @@ Todas as mudanças notáveis deste projeto são registradas aqui.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.9.1] - 2026-07-13
+
+### Alterado
+
+- Performance: o motor do mini-game passa a ser carregado sob demanda
+  (code-splitting), aliviando o JavaScript inicial da página.
+
 ## [1.9.0] - 2026-07-13
 
 ### Adicionado
