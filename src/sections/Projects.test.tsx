@@ -15,7 +15,12 @@ describe('Projects', () => {
       screen.queryByText(project.caseStudy.problem),
     ).not.toBeInTheDocument()
 
-    fireEvent.click(screen.getByRole('button', { name: /ver estudo de caso/i }))
+    const [firstButton] = screen.getAllByRole('button', {
+      name: /ver estudo de caso/i,
+    })
+    expect(firstButton).toBeDefined()
+    if (!firstButton) return
+    fireEvent.click(firstButton)
 
     expect(screen.getByText(project.caseStudy.problem)).toBeInTheDocument()
   })

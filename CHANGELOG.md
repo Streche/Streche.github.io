@@ -5,6 +5,13 @@ Todas as mudanças notáveis deste projeto são registradas aqui.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.7.0] - 2026-07-13
+
+### Adicionado
+
+- Segundo projeto no portfólio: "Sistema de Cadastro de Clientes" (CakePHP), com
+  estudo de caso (problema, solução, resultado) e link do repositório.
+
 ## [1.6.0] - 2026-07-13
 
 ### Adicionado

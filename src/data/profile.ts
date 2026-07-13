@@ -294,6 +294,32 @@ const data: ProfileData = {
         },
       },
     },
+    {
+      name: {
+        pt: 'Sistema de Cadastro de Clientes',
+        en: 'Client Management System',
+      },
+      description: {
+        pt: 'Aplicação web CRUD para cadastrar e gerenciar clientes, com validação e paginação.',
+        en: 'A CRUD web app to register and manage clients, with validation and pagination.',
+      },
+      tags: ['PHP', 'CakePHP', 'MySQL', 'MVC'],
+      repoUrl: 'https://github.com/Streche/projeto',
+      caseStudy: {
+        problem: {
+          pt: 'Eu precisava praticar desenvolvimento back-end com um framework MVC de verdade, indo além de scripts soltos.',
+          en: 'I needed to practice back-end development with a real MVC framework, beyond loose scripts.',
+        },
+        solution: {
+          pt: 'Construí um CRUD completo de clientes em CakePHP 3, com validação no servidor (e-mail único), paginação, mensagens de feedback e testes com PHPUnit.',
+          en: 'I built a complete client CRUD in CakePHP 3, with server-side validation (unique email), pagination, feedback messages and PHPUnit tests.',
+        },
+        results: {
+          pt: 'Uma aplicação organizada em camadas (MVC), com integração contínua (Travis CI), que consolidou minha base em PHP e bancos de dados.',
+          en: 'A layered (MVC) application with continuous integration (Travis CI) that consolidated my foundation in PHP and databases.',
+        },
+      },
+    },
   ],
 }
 
