@@ -246,11 +246,11 @@ const data: ProfileData = {
     },
     {
       course: {
-        pt: 'Técnico em Desenvolvimento Web',
-        en: 'Web Development Technician',
+        pt: 'Técnico em Informática',
+        en: 'IT Technician',
       },
       org: 'Senac RJ',
-      period: '2018 – 2019',
+      period: '2018 – 2021',
     },
     {
       course: { pt: 'Ensino Médio', en: 'High School' },

@@ -5,6 +5,14 @@ Todas as mudanças notáveis deste projeto são registradas aqui.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.9.2] - 2026-08-07
+
+### Corrigido
+
+- Formação do Senac corrigida para "Técnico em Informática" (2018–2021, 1200h),
+  de acordo com o diploma oficial. Estava listada incorretamente como "Técnico
+  em Desenvolvimento Web" (2018–2019).
+
 ## [1.9.1] - 2026-07-13
 
 ### Alterado
