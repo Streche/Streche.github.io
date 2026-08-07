@@ -5,6 +5,14 @@ Todas as mudanças notáveis deste projeto são registradas aqui.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.10.0] - 2026-08-07
+
+### Adicionado
+
+- Certificações na seção de formação: "Cresça com o Google — Carreira de
+  Desenvolvedor" (2019) e o curso de inglês "Immediate Conversation" (Wizard by
+  Pearson, 2014).
+
 ## [1.9.2] - 2026-08-07
 
 ### Corrigido
