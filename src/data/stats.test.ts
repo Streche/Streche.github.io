@@ -15,6 +15,6 @@ describe('STATS', () => {
     const values = STATS.map(
       (stat) => `${stat.prefix ?? ''}${stat.value}${stat.suffix ?? ''}`,
     )
-    expect(values).toEqual(['100', '+5', '−15%', '−20%'])
+    expect(values).toEqual(['99', '+5', '−15%', '−20%'])
   })
 })

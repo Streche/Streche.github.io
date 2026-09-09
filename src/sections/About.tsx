@@ -10,7 +10,10 @@ function StatItem({ stat, active }: { stat: Stat; active: boolean }) {
   const count = useCountUp(stat.value, active)
   return (
     <li className="text-center">
-      <p className="text-3xl font-bold tabular-nums text-neutral-900 dark:text-neutral-100">
+      <p
+        aria-hidden="true"
+        className="text-3xl font-bold tabular-nums text-neutral-900 dark:text-neutral-100"
+      >
         {stat.prefix}
         {count}
         {stat.suffix}
@@ -18,6 +21,11 @@ function StatItem({ stat, active }: { stat: Stat; active: boolean }) {
       <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
         {s.stats[stat.labelKey]}
       </p>
+      <span className="sr-only">
+        {stat.prefix}
+        {stat.value}
+        {stat.suffix} {s.stats[stat.labelKey]}
+      </span>
     </li>
   )
 }

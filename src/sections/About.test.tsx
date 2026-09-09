@@ -47,7 +47,7 @@ describe('About', () => {
     expect(screen.getByText(strings.pt.stats.maintenance)).toBeInTheDocument()
 
     expect(
-      screen.getByText((_, node) => node?.textContent === '100'),
+      screen.getByText((_, node) => node?.textContent === '99'),
     ).toBeInTheDocument()
     expect(
       screen.getByText((_, node) => node?.textContent === '−15%'),

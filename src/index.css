@@ -98,6 +98,21 @@ html {
   opacity: 1;
   transform: none;
 }
+.a11y-reduce-motion {
+  scroll-behavior: auto !important;
+}
+
+.reveal:focus-within {
+  opacity: 1;
+  transform: none;
+}
+
+@media print {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
 
 /* Sublinhado que cresce da esquerda (links, nunca botões). */
 .link-underline {
@@ -105,7 +120,9 @@ html {
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 0% 1px;
-  transition: background-size 0.3s ease;
+  transition-property: background-size;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
 }
 .link-underline:hover,
 .link-underline:focus-visible,

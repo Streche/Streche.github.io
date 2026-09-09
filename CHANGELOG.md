@@ -12,15 +12,12 @@ e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 - Movimento sóbrio no site, tudo em CSS + hooks próprios (sem biblioteca): as
   seções surgem com fade e leve deslize ao entrar na tela, o Hero tem uma entrada
   encadeada e os links ganham um sublinhado animado.
-- Faixa de números na seção "Sobre" (100 no Lighthouse, mais de 5 anos em TI,
+- Faixa de números na seção "Sobre" (99 no Lighthouse, mais de 5 anos em TI,
   redução de 15% no diagnóstico de falhas, redução de 20% na manutenção
   preventiva), com contagem animada quando entra na tela.
 - Linha de valor no Hero e hierarquia de botões (uma ação principal "Ver
   projetos", "Currículo" e "Contato" secundários, LinkedIn e GitHub como ícones).
 - Navegação com destaque da seção ativa (scroll-spy) no cabeçalho.
-
-### Acessibilidade
-
 - Todo o movimento é desligado quando o usuário pede menos animação (preferência
   do sistema ou botão "Reduzir animações"): o conteúdo aparece direto, sem
   deslocamento de layout.

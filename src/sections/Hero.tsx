@@ -56,6 +56,12 @@ export function Hero() {
     }
   }
 
+  const i0 = item(0)
+  const i1 = item(1)
+  const i2 = item(2)
+  const i3 = item(3)
+  const i4 = item(4)
+
   const primary =
     'rounded-lg bg-neutral-900 px-5 py-2.5 font-medium text-white transition-colors hover:bg-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300'
   const secondary =
@@ -69,34 +75,34 @@ export function Hero() {
       className="mx-auto flex min-h-[70svh] w-full max-w-3xl flex-col items-center justify-center px-6 py-20 text-center"
     >
       <h1
-        style={item(0).style}
-        className={`text-4xl font-bold tracking-tight text-neutral-900 sm:text-6xl dark:text-neutral-50 ${item(0).className}`}
+        style={i0.style}
+        className={`text-4xl font-bold tracking-tight text-neutral-900 sm:text-6xl dark:text-neutral-50 ${i0.className}`}
       >
         {profile.name}
       </h1>
       <p
-        style={item(1).style}
-        className={`mt-4 text-xl text-neutral-700 sm:text-2xl dark:text-neutral-300 ${item(1).className}`}
+        style={i1.style}
+        className={`mt-4 text-xl text-neutral-700 sm:text-2xl dark:text-neutral-300 ${i1.className}`}
       >
         {profile.role}
       </p>
       <p
-        style={item(2).style}
-        className={`mt-3 max-w-xl text-base text-neutral-600 dark:text-neutral-400 ${item(2).className}`}
+        style={i2.style}
+        className={`mt-3 max-w-xl text-base text-neutral-600 dark:text-neutral-400 ${i2.className}`}
       >
         {s.hero.tagline}
       </p>
       <p
-        style={item(3).style}
-        className={`mt-2 text-sm text-neutral-500 dark:text-neutral-400 ${item(3).className}`}
+        style={i3.style}
+        className={`mt-2 text-sm text-neutral-500 dark:text-neutral-400 ${i3.className}`}
       >
         {profile.location}
       </p>
 
       <nav
-        style={item(4).style}
+        style={i4.style}
         aria-label={s.hero.viewProjects}
-        className={`mt-8 flex flex-wrap items-center justify-center gap-3 ${item(4).className}`}
+        className={`mt-8 flex flex-wrap items-center justify-center gap-3 ${i4.className}`}
       >
         <a href="#projetos" className={primary}>
           {s.hero.viewProjects}
