@@ -1,6 +1,8 @@
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen, fireEvent, act } from '@testing-library/react'
 import { About } from './About'
 import { getProfile } from '../data/profile'
+import { strings } from '../i18n/strings'
+import { fireIntersection } from '../test/intersection'
 
 const profile = getProfile('pt')
 const paragraphs = profile.about
@@ -29,5 +31,26 @@ describe('About', () => {
 
     fireEvent.click(screen.getByRole('button', { name: /ver mais/i }))
     expect(screen.getByText(lastParagraph)).toBeInTheDocument()
+  })
+
+  it('mostra a faixa de números ao entrar na viewport', () => {
+    document.documentElement.classList.add('a11y-reduce-motion')
+    render(<About />)
+
+    act(() => {
+      fireIntersection(true)
+    })
+
+    expect(screen.getByText(strings.pt.stats.lighthouse)).toBeInTheDocument()
+    expect(screen.getByText(strings.pt.stats.years)).toBeInTheDocument()
+    expect(screen.getByText(strings.pt.stats.diagnosis)).toBeInTheDocument()
+    expect(screen.getByText(strings.pt.stats.maintenance)).toBeInTheDocument()
+
+    expect(
+      screen.getByText((_, node) => node?.textContent === '100'),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByText((_, node) => node?.textContent === '−15%'),
+    ).toBeInTheDocument()
   })
 })
