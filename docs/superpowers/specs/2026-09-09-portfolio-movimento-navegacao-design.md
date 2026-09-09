@@ -158,9 +158,11 @@ Adicionar também `html { scroll-behavior: smooth; }` (o reduced-motion já reve
 ### 3.3 Scroll-reveal nas seções — `src/components/Section.tsx`
 - `<Section>` envolve **apenas `{children}`** num `<Reveal>`. O `<h2>` do título fica
   estático (evita o cabeçalho "pulando" e mantém âncora/`aria-labelledby` estáveis).
-- As 6 seções que usam `<Section>` (About, Experience, Skills, Projects, Ask, Contact)
-  ganham o efeito. Hero tem o stagger próprio. **Game fica de fora do reveal**
-  (confirmado): é o gancho lúdico logo abaixo da dobra e não deve ter atraso.
+- **Todas as 7 seções que usam `<Section>`** (Game, About, Experience, Skills, Projects,
+  Ask, Contact) ganham o efeito. Hero tem o stagger próprio.
+- **Revisão pós-implementação (2026-09-09):** a decisão anterior era deixar o Game de
+  fora do reveal, mas `Game.tsx` usa `<Section id="jogo">` e o usuário optou por manter
+  o reveal também no jogo (consistência visual, sem prop de opt-out).
 - Seção já visível no load aparece na hora (IO dispara imediato para quem já
   intersecta).
 - `Section` não tem teste próprio hoje; adicionar um simples (renderiza título +
@@ -210,8 +212,8 @@ Adicionar também `html { scroll-behavior: smooth; }` (o reduced-motion já reve
 1. **Tagline:** foco em valor. PT "Transformo problemas difíceis em interfaces rápidas,
    acessíveis e confiáveis." / EN "I turn hard problems into fast, accessible, reliable
    interfaces."
-2. **Game no scroll-reveal:** não. Aparece na hora; só as outras 6 seções recebem o
-   reveal.
+2. **Game no scroll-reveal:** ~~não~~ **sim** (revertido na revisão pós-implementação de
+   2026-09-09, a pedido do usuário). Todas as 7 seções recebem o reveal.
 3. **Faixa de números:** no fim da seção "Sobre".
 4. **Verificação visual:** ao vivo via Playwright MCP (Opera GX, perfil "Teste com
    claude", porta 9222) durante a implementação. Screenshots do `npm run dev`.
