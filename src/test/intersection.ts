@@ -11,6 +11,7 @@ const registry: Registered[] = []
 export class MockIntersectionObserver implements IntersectionObserver {
   readonly root = null
   readonly rootMargin = ''
+  readonly scrollMargin = ''
   readonly thresholds: ReadonlyArray<number> = []
   private entry: Registered
 
