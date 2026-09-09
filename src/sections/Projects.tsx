@@ -64,7 +64,7 @@ function ProjectCard({ project }: { project: Project }) {
         {project.repoUrl && (
           <ExternalLink
             href={project.repoUrl}
-            className="text-neutral-900 underline underline-offset-4 hover:no-underline dark:text-neutral-100"
+            className="link-underline text-neutral-900 underline-offset-4 dark:text-neutral-100"
           >
             {s.project.code}
           </ExternalLink>
@@ -72,7 +72,7 @@ function ProjectCard({ project }: { project: Project }) {
         {project.liveUrl && (
           <ExternalLink
             href={project.liveUrl}
-            className="text-neutral-900 underline underline-offset-4 hover:no-underline dark:text-neutral-100"
+            className="link-underline text-neutral-900 underline-offset-4 dark:text-neutral-100"
           >
             {s.project.live}
           </ExternalLink>
