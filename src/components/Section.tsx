@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { Reveal } from './Reveal'
 
 interface SectionProps {
   /** Usado como âncora de navegação e para o aria-labelledby. */
@@ -9,7 +10,8 @@ interface SectionProps {
 
 /**
  * Wrapper semântico de seção: garante <section> com cabeçalho acessível
- * (aria-labelledby) e espaçamento consistente em todo o site.
+ * (aria-labelledby) e espaçamento consistente em todo o site. O conteúdo é
+ * revelado (fade + slide) ao entrar na viewport; o título fica estático.
  */
 export function Section({ id, title, children }: SectionProps) {
   const headingId = `${id}-title`
@@ -25,7 +27,7 @@ export function Section({ id, title, children }: SectionProps) {
       >
         {title}
       </h2>
-      {children}
+      <Reveal>{children}</Reveal>
     </section>
   )
 }
