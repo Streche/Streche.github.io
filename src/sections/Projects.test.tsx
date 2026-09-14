@@ -24,4 +24,14 @@ describe('Projects', () => {
 
     expect(screen.getByText(project.caseStudy.problem)).toBeInTheDocument()
   })
+
+  it('mostra a grade de certificações após os projetos', () => {
+    render(<Projects />)
+    expect(
+      screen.getByRole('heading', { name: /certificações/i }),
+    ).toBeInTheDocument()
+    for (const cert of profile.certifications) {
+      expect(screen.getByText(cert.label)).toBeInTheDocument()
+    }
+  })
 })
