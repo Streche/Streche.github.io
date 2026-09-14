@@ -68,3 +68,64 @@ body {
   transition-duration: 0.01ms !important;
   scroll-behavior: auto !important;
 }
+
+/* --- Movimento (v1.10) --- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.5s ease-out,
+    transform 0.5s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Reduced motion: conteúdo sempre visível, sem depender do observer. */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+.a11y-reduce-motion .reveal {
+  opacity: 1;
+  transform: none;
+}
+.a11y-reduce-motion {
+  scroll-behavior: auto !important;
+}
+
+.reveal:focus-within {
+  opacity: 1;
+  transform: none;
+}
+
+@media print {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Sublinhado que cresce da esquerda (links, nunca botões). */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition-property: background-size;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+.link-underline:hover,
+.link-underline:focus-visible,
+.link-underline.is-active {
+  background-size: 100% 1px;
+}

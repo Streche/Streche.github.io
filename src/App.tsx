@@ -1,4 +1,5 @@
 import { useI18n } from './i18n/context'
+import { useScrollSpy } from './hooks/useScrollSpy'
 import { HeaderControls } from './components/HeaderControls'
 import { A11yWidget } from './components/A11yWidget'
 import { Hero } from './sections/Hero'
@@ -10,8 +11,20 @@ import { Projects } from './sections/Projects'
 import { Ask } from './sections/Ask'
 import { Contact } from './sections/Contact'
 
+const SECTION_IDS: readonly string[] = [
+  'jogo',
+  'sobre',
+  'experiencia',
+  'competencias',
+  'projetos',
+  'pergunte',
+  'contato',
+]
+
 function App() {
   const { s, profile } = useI18n()
+
+  const activeId = useScrollSpy(SECTION_IDS)
 
   const navLinks = [
     { href: '#jogo', label: s.nav.game },
@@ -43,16 +56,24 @@ function App() {
           </a>
           <div className="flex items-center gap-4">
             <ul className="hidden gap-6 text-sm sm:flex">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = activeId === link.href.slice(1)
+                return (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      aria-current={isActive ? 'true' : undefined}
+                      className={`link-underline transition-colors ${
+                        isActive
+                          ? 'is-active text-neutral-900 dark:text-neutral-100'
+                          : 'text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100'
+                      }`}
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                )
+              })}
             </ul>
             <HeaderControls />
           </div>

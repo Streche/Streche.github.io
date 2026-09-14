@@ -198,8 +198,8 @@ const data: ProfileData = {
     },
     {
       role: {
-        pt: 'Auxiliar Técnico em Eletrônica / Supervisor',
-        en: 'Electronics Technician Assistant / Supervisor',
+        pt: 'Auxiliar Técnico em Eletrônica',
+        en: 'Electronics Technician Assistant',
       },
       org: 'Marcris Serviços',
       period: { pt: '2022 – 2025', en: '2022 – 2025' },

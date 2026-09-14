@@ -1,11 +1,40 @@
 import { useState } from 'react'
 import { useI18n } from '../i18n/context'
 import { Section } from '../components/Section'
+import { useInView } from '../hooks/useInView'
+import { useCountUp } from '../hooks/useCountUp'
+import { STATS, type Stat } from '../data/stats'
 
-/** Seção "Sobre mim": card com os parágrafos iniciais e "Ver mais" no último. */
+function StatItem({ stat, active }: { stat: Stat; active: boolean }) {
+  const { s } = useI18n()
+  const count = useCountUp(stat.value, active)
+  return (
+    <li className="text-center">
+      <p
+        aria-hidden="true"
+        className="text-3xl font-bold tabular-nums text-neutral-900 dark:text-neutral-100"
+      >
+        {stat.prefix}
+        {count}
+        {stat.suffix}
+      </p>
+      <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+        {s.stats[stat.labelKey]}
+      </p>
+      <span className="sr-only">
+        {stat.prefix}
+        {stat.value}
+        {stat.suffix} {s.stats[stat.labelKey]}
+      </span>
+    </li>
+  )
+}
+
+/** Seção "Sobre mim": card com os parágrafos iniciais e uma faixa de números. */
 export function About() {
   const { s, profile } = useI18n()
   const [expanded, setExpanded] = useState(false)
+  const { ref: statsRef, inView: statsInView } = useInView<HTMLUListElement>()
 
   const paragraphs = profile.about
   const hasCollapsible = paragraphs.length > 1
@@ -46,6 +75,12 @@ export function About() {
           </button>
         )}
       </div>
+
+      <ul ref={statsRef} className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4">
+        {STATS.map((stat) => (
+          <StatItem key={stat.labelKey} stat={stat} active={statsInView} />
+        ))}
+      </ul>
     </Section>
   )
 }

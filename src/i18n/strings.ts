@@ -30,7 +30,13 @@ export interface Strings {
   }
   ask: { intro: string }
   experience: { work: string; education: string }
-  hero: { viewProjects: string; contact: string }
+  hero: { viewProjects: string; contact: string; tagline: string }
+  stats: {
+    lighthouse: string
+    years: string
+    diagnosis: string
+    maintenance: string
+  }
   contact: { intro: string }
   projectsNav: { prev: string; next: string }
   project: { code: string; live: string }
@@ -96,7 +102,18 @@ export const strings: Record<Lang, Strings> = {
       work: 'Experiência profissional',
       education: 'Formação acadêmica',
     },
-    hero: { viewProjects: 'Ver projetos', contact: 'Contato' },
+    hero: {
+      viewProjects: 'Ver projetos',
+      contact: 'Contato',
+      tagline:
+        'Transformo problemas difíceis em interfaces rápidas, acessíveis e confiáveis.',
+    },
+    stats: {
+      lighthouse: 'pontos no Lighthouse',
+      years: 'anos em TI e suporte',
+      diagnosis: 'no tempo de diagnóstico de falhas',
+      maintenance: 'no tempo de manutenção preventiva',
+    },
     contact: { intro: 'Vamos conversar? Encontre-me nestes canais:' },
     projectsNav: {
       prev: 'Ver projetos anteriores',
@@ -168,7 +185,18 @@ export const strings: Record<Lang, Strings> = {
       work: 'Professional experience',
       education: 'Education',
     },
-    hero: { viewProjects: 'View projects', contact: 'Contact' },
+    hero: {
+      viewProjects: 'View projects',
+      contact: 'Contact',
+      tagline:
+        'I turn hard problems into fast, accessible, reliable interfaces.',
+    },
+    stats: {
+      lighthouse: 'Lighthouse score',
+      years: 'years in IT & support',
+      diagnosis: 'in fault-diagnosis time',
+      maintenance: 'in preventive maintenance time',
+    },
     contact: { intro: "Let's talk? Find me on these channels:" },
     projectsNav: {
       prev: 'See previous projects',
