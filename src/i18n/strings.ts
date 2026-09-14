@@ -27,9 +27,11 @@ export interface Strings {
     game: string
     ask: string
     contact: string
+    whatIDo: string
   }
   ask: { intro: string }
   experience: { work: string; education: string }
+  projects: { certifications: string }
   hero: { viewProjects: string; contact: string; tagline: string }
   stats: {
     lighthouse: string
@@ -96,12 +98,14 @@ export const strings: Record<Lang, Strings> = {
       game: 'Mini-game',
       ask: 'Pergunte sobre mim',
       contact: 'Contato',
+      whatIDo: 'O que eu faço',
     },
     ask: { intro: 'Clique numa pergunta e eu respondo aqui.' },
     experience: {
       work: 'Experiência profissional',
       education: 'Formação acadêmica',
     },
+    projects: { certifications: 'Certificações' },
     hero: {
       viewProjects: 'Ver projetos',
       contact: 'Contato',
@@ -179,12 +183,14 @@ export const strings: Record<Lang, Strings> = {
       game: 'Mini-game',
       ask: 'Ask me anything',
       contact: 'Contact',
+      whatIDo: 'What I do',
     },
     ask: { intro: "Click a question and I'll answer here." },
     experience: {
       work: 'Professional experience',
       education: 'Education',
     },
+    projects: { certifications: 'Certifications' },
     hero: {
       viewProjects: 'View projects',
       contact: 'Contact',

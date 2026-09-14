@@ -6,6 +6,13 @@ interface SectionProps {
   id: string
   title: string
   children: ReactNode
+  /**
+   * Quando true, a seção ocupa a largura inteira da tela (sem o wrapper
+   * centralizado max-w-3xl). Usado pelo mini-game, que fica de ponta a
+   * ponta do site. O título e o conteúdo internos continuam com seu
+   * próprio espaçamento.
+   */
+  fullBleed?: boolean
 }
 
 /**
@@ -13,17 +20,24 @@ interface SectionProps {
  * (aria-labelledby) e espaçamento consistente em todo o site. O conteúdo é
  * revelado (fade + slide) ao entrar na viewport; o título fica estático.
  */
-export function Section({ id, title, children }: SectionProps) {
+export function Section({ id, title, children, fullBleed }: SectionProps) {
   const headingId = `${id}-title`
   return (
     <section
       id={id}
       aria-labelledby={headingId}
-      className="mx-auto w-full max-w-3xl scroll-mt-20 px-6 py-16"
+      className={
+        fullBleed
+          ? 'scroll-mt-20 py-16'
+          : 'mx-auto w-full max-w-3xl scroll-mt-20 px-6 py-16'
+      }
     >
       <h2
         id={headingId}
-        className="mb-6 text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl dark:text-neutral-100"
+        className={`text-gradient mb-6 font-black tracking-tight uppercase ${
+          fullBleed ? 'px-6 text-center' : ''
+        }`}
+        style={{ fontSize: 'clamp(2rem, 7vw, 4.5rem)', lineHeight: 1 }}
       >
         {title}
       </h2>

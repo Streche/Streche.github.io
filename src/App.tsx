@@ -7,18 +7,19 @@ import { Game } from './sections/Game'
 import { About } from './sections/About'
 import { Experience } from './sections/Experience'
 import { Skills } from './sections/Skills'
+import { WhatIDo } from './sections/WhatIDo'
 import { Projects } from './sections/Projects'
 import { Ask } from './sections/Ask'
 import { Contact } from './sections/Contact'
 
 const SECTION_IDS: readonly string[] = [
-  'jogo',
+  'competencias',
   'sobre',
   'experiencia',
-  'competencias',
   'projetos',
   'pergunte',
   'contato',
+  'jogo',
 ]
 
 function App() {
@@ -27,17 +28,17 @@ function App() {
   const activeId = useScrollSpy(SECTION_IDS)
 
   const navLinks = [
-    { href: '#jogo', label: s.nav.game },
+    { href: '#competencias', label: s.nav.skills },
     { href: '#sobre', label: s.nav.about },
     { href: '#experiencia', label: s.nav.experience },
-    { href: '#competencias', label: s.nav.skills },
     { href: '#projetos', label: s.nav.projects },
     { href: '#pergunte', label: s.nav.ask },
     { href: '#contato', label: s.nav.contact },
+    { href: '#jogo', label: s.nav.game },
   ]
 
   return (
-    <div className="min-h-svh bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+    <div className="app-bg relative min-h-svh text-neutral-900 dark:text-neutral-100">
       {/* Skip link: acessibilidade para navegação por teclado. */}
       <a
         href="#conteudo"
@@ -82,16 +83,17 @@ function App() {
 
       <main id="conteudo">
         <Hero />
-        <Game />
+        <Skills />
         <About />
         <Experience />
-        <Skills />
+        <WhatIDo />
         <Projects />
         <Ask />
         <Contact />
+        <Game />
       </main>
 
-      <footer className="border-t border-neutral-200 py-8 text-center text-sm text-neutral-500 dark:border-neutral-800 dark:text-neutral-400">
+      <footer className="relative border-t border-neutral-200 py-8 text-center text-sm text-neutral-500 dark:border-neutral-800 dark:text-neutral-400">
         © {new Date().getFullYear()} {profile.name}
       </footer>
 

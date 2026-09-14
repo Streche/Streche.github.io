@@ -5,12 +5,16 @@ import { getProfile } from '../data/profile'
 
 const profile = getProfile('pt')
 
+const displayName = profile.name.split(' ').at(-1)
+
 describe('Hero', () => {
-  it('mostra nome, cargo e a linha de valor', () => {
+  it('mostra o último nome em destaque, o primeiro nome, cargo e a linha de valor', () => {
     render(<Hero />)
+    expect(displayName).toBeDefined()
     expect(
-      screen.getByRole('heading', { name: profile.name }),
+      screen.getByRole('heading', { name: displayName }),
     ).toBeInTheDocument()
+    expect(screen.getByText('Carlos')).toBeInTheDocument()
     expect(screen.getByText(profile.role)).toBeInTheDocument()
     expect(screen.getByText(strings.pt.hero.tagline)).toBeInTheDocument()
   })
