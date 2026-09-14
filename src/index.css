@@ -237,3 +237,12 @@ html {
 .btn-magnetic {
   will-change: transform;
 }
+
+/* Faixa de tiles (TileCarousel): rolagem lateral sem barra de rolagem visível. */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

@@ -13,11 +13,12 @@ describe('Skills', () => {
     ).toBeInTheDocument()
   })
 
-  it('mostra cada competência ao menos uma vez, em grade estática com reduced-motion', () => {
+  it('mostra cada competência ao menos uma vez, entre as duas faixas', () => {
     document.documentElement.classList.add('a11y-reduce-motion')
     render(<Skills />)
     for (const item of allItems) {
       expect(screen.getAllByText(item).length).toBeGreaterThanOrEqual(1)
     }
+    document.documentElement.classList.remove('a11y-reduce-motion')
   })
 })

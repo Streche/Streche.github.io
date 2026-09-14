@@ -40,6 +40,7 @@ export interface Strings {
     maintenance: string
   }
   contact: { intro: string }
+  carousel: { prev: string; next: string }
   project: { code: string; live: string }
   caseStudy: {
     show: string
@@ -118,6 +119,7 @@ export const strings: Record<Lang, Strings> = {
       maintenance: 'no tempo de manutenção preventiva',
     },
     contact: { intro: 'Vamos conversar? Encontre-me nestes canais:' },
+    carousel: { prev: 'Rolar para a esquerda', next: 'Rolar para a direita' },
     project: { code: 'Código', live: 'Ver ao vivo' },
     caseStudy: {
       show: 'Ver estudo de caso',
@@ -199,6 +201,7 @@ export const strings: Record<Lang, Strings> = {
       maintenance: 'in preventive maintenance time',
     },
     contact: { intro: "Let's talk? Find me on these channels:" },
+    carousel: { prev: 'Scroll left', next: 'Scroll right' },
     project: { code: 'Code', live: 'Live demo' },
     caseStudy: {
       show: 'View case study',

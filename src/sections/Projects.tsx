@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useI18n } from '../i18n/context'
 import { Section } from '../components/Section'
 import { Tag } from '../components/Tag'
+import { TileCarousel } from '../components/TileCarousel'
 import { ExternalLink } from '../components/ExternalLink'
 import type { Project } from '../data/profile'
 
@@ -115,13 +116,10 @@ export function Projects() {
       <h3 className="mt-12 mb-4 text-sm font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
         {s.projects.certifications}
       </h3>
-      <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-        {profile.certifications.map((cert) => (
-          <li key={cert.label} className="tile">
-            {cert.label}
-          </li>
-        ))}
-      </ul>
+      <TileCarousel
+        items={profile.certifications.map((cert) => cert.label)}
+        ariaLabel={s.projects.certifications}
+      />
     </Section>
   )
 }
