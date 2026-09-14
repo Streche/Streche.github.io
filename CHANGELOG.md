@@ -5,6 +5,14 @@ Todas as mudanças notáveis deste projeto são registradas aqui.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.10.1] - 2026-09-14
+
+### Adicionado
+
+- Certificações na seção de formação: "Cresça com o Google — Carreira de
+  Desenvolvedor" (2019) e o curso de inglês "Immediate Conversation" (Wizard by
+  Pearson, 2014).
+
 ## [1.10.0] - 2026-09-09
 
 ### Adicionado
@@ -21,6 +29,14 @@ e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 - Todo o movimento é desligado quando o usuário pede menos animação (preferência
   do sistema ou botão "Reduzir animações"): o conteúdo aparece direto, sem
   deslocamento de layout.
+
+## [1.9.2] - 2026-08-07
+
+### Corrigido
+
+- Formação do Senac corrigida para "Técnico em Informática" (2018–2021, 1200h),
+  de acordo com o diploma oficial. Estava listada incorretamente como "Técnico
+  em Desenvolvimento Web" (2018–2019).
 
 ## [1.9.1] - 2026-07-13
 

@@ -198,8 +198,8 @@ const data: ProfileData = {
     },
     {
       role: {
-        pt: 'Auxiliar Técnico em Eletrônica / Supervisor',
-        en: 'Electronics Technician Assistant / Supervisor',
+        pt: 'Auxiliar Técnico em Eletrônica',
+        en: 'Electronics Technician Assistant',
       },
       org: 'Marcris Serviços',
       period: { pt: '2022 – 2025', en: '2022 – 2025' },
@@ -246,16 +246,32 @@ const data: ProfileData = {
     },
     {
       course: {
-        pt: 'Técnico em Desenvolvimento Web',
-        en: 'Web Development Technician',
+        pt: 'Técnico em Informática',
+        en: 'IT Technician',
       },
       org: 'Senac RJ',
-      period: '2018 – 2019',
+      period: '2018 – 2021',
+    },
+    {
+      course: {
+        pt: 'Cresça com o Google — Carreira de Desenvolvedor',
+        en: 'Grow with Google — Developer Career',
+      },
+      org: 'Google',
+      period: '2019',
     },
     {
       course: { pt: 'Ensino Médio', en: 'High School' },
       org: 'C.E. Duque Costa',
       period: '2018',
+    },
+    {
+      course: {
+        pt: 'Immediate Conversation — Inglês',
+        en: 'Immediate Conversation — English',
+      },
+      org: 'Wizard by Pearson',
+      period: '2014',
     },
   ],
   contacts: [
