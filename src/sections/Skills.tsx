@@ -11,9 +11,9 @@ function splitRows(groups: SkillGroup[]): [string[], string[]] {
 }
 
 /**
- * Seção "Competências": duas faixas horizontais com a stack técnica, cada
- * uma com setas de rolagem lateral e avanço automático que pausa no hover
- * ou no foco do teclado (ver TileCarousel).
+ * Seção "Competências": uma única faixa com duas linhas empilhadas da
+ * stack técnica, um par de setas controlando as duas juntas, e caixas de
+ * tamanho único (sem quebrar linha) via TileCarousel.
  */
 export function Skills() {
   const { s, profile } = useI18n()
@@ -21,9 +21,12 @@ export function Skills() {
 
   return (
     <Section id="competencias" title={s.sections.skills}>
-      <div className="full-bleed space-y-3 px-4 sm:px-6">
-        <TileCarousel items={row1} ariaLabel={s.sections.skills} />
-        <TileCarousel items={row2} ariaLabel={s.sections.skills} reverse />
+      <div className="full-bleed px-4 sm:px-6">
+        <TileCarousel
+          rows={[row1, row2]}
+          ariaLabel={s.sections.skills}
+          nowrap
+        />
       </div>
     </Section>
   )

@@ -118,7 +118,7 @@ export function Projects() {
       </h3>
       <div className="full-bleed px-4 sm:px-6">
         <TileCarousel
-          items={profile.certifications.map((cert) => cert.label)}
+          rows={[profile.certifications.map((cert) => cert.label)]}
           ariaLabel={s.projects.certifications}
         />
       </div>
