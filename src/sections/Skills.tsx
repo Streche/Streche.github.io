@@ -21,7 +21,7 @@ export function Skills() {
 
   return (
     <Section id="competencias" title={s.sections.skills}>
-      <div className="space-y-3">
+      <div className="full-bleed space-y-3 px-4 sm:px-6">
         <TileCarousel items={row1} ariaLabel={s.sections.skills} />
         <TileCarousel items={row2} ariaLabel={s.sections.skills} reverse />
       </div>

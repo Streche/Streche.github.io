@@ -246,3 +246,15 @@ html {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Estica um elemento pra largura inteira da tela mesmo dentro de uma seção
+   com max-w-3xl (as faixas de Competências e Certificações, ponta a ponta
+   do site, como no Conceito 3 original). */
+.full-bleed {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}

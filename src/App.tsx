@@ -38,7 +38,7 @@ function App() {
   ]
 
   return (
-    <div className="app-bg relative min-h-svh text-neutral-900 dark:text-neutral-100">
+    <div className="app-bg relative min-h-svh overflow-x-clip text-neutral-900 dark:text-neutral-100">
       {/* Skip link: acessibilidade para navegação por teclado. */}
       <a
         href="#conteudo"

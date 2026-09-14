@@ -116,10 +116,12 @@ export function Projects() {
       <h3 className="mt-12 mb-4 text-sm font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
         {s.projects.certifications}
       </h3>
-      <TileCarousel
-        items={profile.certifications.map((cert) => cert.label)}
-        ariaLabel={s.projects.certifications}
-      />
+      <div className="full-bleed px-4 sm:px-6">
+        <TileCarousel
+          items={profile.certifications.map((cert) => cert.label)}
+          ariaLabel={s.projects.certifications}
+        />
+      </div>
     </Section>
   )
 }
