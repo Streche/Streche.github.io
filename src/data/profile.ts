@@ -45,6 +45,15 @@ export interface EducationItem {
   period: string
 }
 
+export interface WhatIDoItem {
+  title: string
+  description: string
+}
+
+export interface Certification {
+  label: string
+}
+
 export interface Profile {
   name: string
   role: string
@@ -53,6 +62,8 @@ export interface Profile {
   skills: SkillGroup[]
   experience: ExperienceItem[]
   education: EducationItem[]
+  whatIDo: WhatIDoItem[]
+  certifications: Certification[]
   contacts: Contact[]
   projects: Project[]
 }
@@ -77,6 +88,8 @@ interface ProfileData {
     org: string
     period: string
   }[]
+  whatIDo: { title: Localized<string>; description: Localized<string> }[]
+  certifications: { label: Localized<string> }[]
   contacts: Contact[]
   projects: {
     name: Localized<string>
@@ -274,6 +287,63 @@ const data: ProfileData = {
       period: '2014',
     },
   ],
+  whatIDo: [
+    {
+      title: { pt: 'Front-end', en: 'Front-end' },
+      description: {
+        pt: 'Interfaces em React, TypeScript e Angular, com foco em performance, acessibilidade e um design que não briga com o usuário.',
+        en: 'Interfaces in React, TypeScript and Angular, focused on performance, accessibility and a design that never fights the user.',
+      },
+    },
+    {
+      title: { pt: 'Back-end e APIs', en: 'Back-end & APIs' },
+      description: {
+        pt: 'Serviços e APIs em Node.js, Java, C# e Python, com banco relacional (SQL) e a lógica bem separada da apresentação.',
+        en: 'Services and APIs in Node.js, Java, C# and Python, with a relational database (SQL) and logic kept well separated from presentation.',
+      },
+    },
+    {
+      title: { pt: 'Dados', en: 'Data' },
+      description: {
+        pt: 'Modelagem em SQL e NoSQL e leitura de dados com Power BI e Excel avançado, para transformar número em decisão.',
+        en: 'SQL and NoSQL modeling and data analysis with Power BI and advanced Excel, turning numbers into decisions.',
+      },
+    },
+    {
+      title: { pt: 'Qualidade e entrega', en: 'Quality & delivery' },
+      description: {
+        pt: 'Testes automatizados, CI/CD e Git, com a disciplina de diagnóstico que trouxe da eletrônica: entender o todo antes de mexer.',
+        en: 'Automated tests, CI/CD and Git, with the diagnostic discipline I brought from electronics: understand the whole before touching anything.',
+      },
+    },
+  ],
+  certifications: [
+    {
+      label: { pt: 'Data Science — Santander', en: 'Data Science — Santander' },
+    },
+    {
+      label: { pt: 'AI React Front-end — DIO', en: 'AI React Front-end — DIO' },
+    },
+    { label: { pt: 'IA para Carreira — DIO', en: 'AI for Career — DIO' } },
+    {
+      label: {
+        pt: 'Marketing Digital — Google',
+        en: 'Digital Marketing — Google',
+      },
+    },
+    { label: { pt: 'Carreira Dev — Google', en: 'Dev Career — Google' } },
+    { label: { pt: 'Inglês — Wizard', en: 'English — Wizard' } },
+    { label: { pt: 'Bombeiro Civil', en: 'Civil Firefighter' } },
+    { label: { pt: 'Vigilante — CFV', en: 'Security Guard — CFV' } },
+    {
+      label: {
+        pt: 'Grandes Catástrofes — Coren-RJ',
+        en: 'Major Disasters — Coren-RJ',
+      },
+    },
+    { label: { pt: 'Não é Não — RJ', en: 'No Means No — RJ' } },
+    { label: { pt: 'Coca-Cola Jovem', en: 'Coca-Cola Youth' } },
+  ],
   contacts: [
     {
       type: 'linkedin',
@@ -361,6 +431,13 @@ export function getProfile(lang: Lang): Profile {
       course: item.course[lang],
       org: item.org,
       period: item.period,
+    })),
+    whatIDo: data.whatIDo.map((item) => ({
+      title: item.title[lang],
+      description: item.description[lang],
+    })),
+    certifications: data.certifications.map((item) => ({
+      label: item.label[lang],
     })),
     contacts: data.contacts,
     projects: data.projects.map((project) => ({

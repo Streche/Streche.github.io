@@ -5,6 +5,29 @@ Todas as mudanças notáveis deste projeto são registradas aqui.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [2.0.0] - 2026-09-14
+
+### Alterado
+
+- Redesign visual completo do portfólio (Hero, seções e navegação), com uma
+  nova identidade: títulos em gradiente, plano de fundo com brilho radial e
+  grão sutil, formas decorativas e botão com hover magnético. Mantém os dois
+  temas (claro/escuro), i18n PT/EN e nenhuma biblioteca nova.
+- Hero: o nome de destaque passa a mostrar só "EDUARDO" (o restante do nome
+  aparece pequeno acima).
+- "Competências" vira um mosaico de tiles com a stack técnica (duas fileiras
+  que deslizam ao rolar a página); em "reduzir animações" vira uma grade
+  estática, sem repetição.
+- Nova seção "O que eu faço", com as 4 frentes de atuação (front-end,
+  back-end e APIs, dados, qualidade e entrega).
+- "Experiência" ganha numeração grande por vaga, no mesmo estilo visual.
+- "Projetos" passa de carrossel horizontal para lista vertical de cards, e
+  ganha logo abaixo uma grade com as 11 certificações e cursos.
+- "Contato" com botões em formato de pílula.
+- O mini-game passa a ocupar a largura inteira da tela (mantendo o jogo em
+  si numa largura legível) e muda de posição: fica por último, antes do
+  rodapé.
+
 ## [1.10.1] - 2026-09-14
 
 ### Adicionado
