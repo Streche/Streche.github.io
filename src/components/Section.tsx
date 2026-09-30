@@ -34,8 +34,8 @@ export function Section({ id, title, children, fullBleed }: SectionProps) {
     >
       <h2
         id={headingId}
-        className={`text-gradient mb-6 font-black tracking-tight uppercase ${
-          fullBleed ? 'px-6 text-center' : ''
+        className={`text-gradient mb-6 text-center font-black tracking-tight uppercase ${
+          fullBleed ? 'px-6' : ''
         }`}
         style={{ fontSize: 'clamp(2rem, 7vw, 4.5rem)', lineHeight: 1 }}
       >
