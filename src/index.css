@@ -19,6 +19,10 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  /* Reserva o espaço da barra de rolagem sempre: sem isso, `.full-bleed`
+     (que usa 100vw) fica alguns pixels maior que a área visível quando a
+     barra aparece, porque 100vw inclui a barra mas o layout normal não. */
+  scrollbar-gutter: stable;
 }
 
 body {

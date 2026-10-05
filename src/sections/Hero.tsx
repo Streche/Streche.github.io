@@ -93,7 +93,7 @@ export function Hero() {
 
       <p
         style={i0.style}
-        className={`text-sm font-medium tracking-[0.3em] text-neutral-500 uppercase dark:text-neutral-400 ${i0.className}`}
+        className={`w-full text-sm font-medium tracking-[0.3em] text-neutral-500 uppercase dark:text-neutral-400 ${i0.className}`}
       >
         {firstNames}
       </p>
@@ -105,19 +105,19 @@ export function Hero() {
       </h1>
       <p
         style={i1.style}
-        className={`mt-4 text-xl text-neutral-700 sm:text-2xl dark:text-neutral-300 ${i1.className}`}
+        className={`mt-4 w-full text-xl text-neutral-700 sm:text-2xl dark:text-neutral-300 ${i1.className}`}
       >
         {profile.role}
       </p>
       <p
         style={i2.style}
-        className={`mt-3 max-w-xl text-base text-neutral-600 dark:text-neutral-400 ${i2.className}`}
+        className={`mt-3 w-full max-w-xl text-base text-neutral-600 dark:text-neutral-400 ${i2.className}`}
       >
         {s.hero.tagline}
       </p>
       <p
         style={i3.style}
-        className={`mt-2 text-sm text-neutral-500 dark:text-neutral-400 ${i3.className}`}
+        className={`mt-2 w-full text-sm text-neutral-500 dark:text-neutral-400 ${i3.className}`}
       >
         {profile.location}
       </p>

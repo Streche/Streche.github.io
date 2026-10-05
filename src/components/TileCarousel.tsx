@@ -119,7 +119,7 @@ export function TileCarousel({
         <span aria-hidden="true">‹</span>
       </button>
 
-      <div className="flex flex-1 flex-col gap-3">
+      <div className="flex min-w-0 flex-1 flex-col gap-3">
         {rows.map((rowItems, rowIndex) => (
           <ul
             key={rowIndex}
