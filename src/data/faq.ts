@@ -73,8 +73,8 @@ const faq: {
       en: 'What projects have you built?',
     },
     answer: {
-      pt: 'Fiz este portfólio (React, com um mini-game em canvas) e um sistema de cadastro de clientes em CakePHP. Dá para ver os detalhes na seção Projetos.',
-      en: 'I built this portfolio (React, with a canvas mini-game) and a client management system in CakePHP. You can see the details in the Projects section.',
+      pt: 'Fiz este portfólio (React, com um mini-game em canvas) e o site de um estúdio de pilates, um projeto freelance real. Dá para ver os detalhes na seção Projetos.',
+      en: 'I built this portfolio (React, with a canvas mini-game) and the site for a pilates studio, a real freelance project. You can see the details in the Projects section.',
     },
   },
   {

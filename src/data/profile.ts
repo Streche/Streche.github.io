@@ -382,27 +382,27 @@ const data: ProfileData = {
     },
     {
       name: {
-        pt: 'Sistema de Cadastro de Clientes',
-        en: 'Client Management System',
+        pt: 'Studio Adrielle Ferreira Pilates',
+        en: 'Studio Adrielle Ferreira Pilates',
       },
       description: {
-        pt: 'Aplicação web CRUD para cadastrar e gerenciar clientes, com validação e paginação.',
-        en: 'A CRUD web app to register and manage clients, with validation and pagination.',
+        pt: 'Site institucional para um estúdio de pilates e fisioterapia, projeto freelance real, feito para converter visitantes em aula experimental agendada.',
+        en: 'Institutional site for a pilates and physiotherapy studio, a real freelance project built to convert visitors into booked trial classes.',
       },
-      tags: ['PHP', 'CakePHP', 'MySQL', 'MVC'],
-      repoUrl: 'https://github.com/Streche/projeto',
+      tags: ['React', 'TypeScript', 'Tailwind', 'shadcn/ui'],
+      repoUrl: 'https://github.com/Streche/studio-adrielle-pilates',
       caseStudy: {
         problem: {
-          pt: 'Eu precisava praticar desenvolvimento back-end com um framework MVC de verdade, indo além de scripts soltos.',
-          en: 'I needed to practice back-end development with a real MVC framework, beyond loose scripts.',
+          pt: 'Uma cliente real precisava de um site profissional para apresentar o estúdio, suas modalidades e diferenciais, e gerar agendamentos de aula experimental, sem depender só do Instagram.',
+          en: 'A real client needed a professional site to present the studio, its class formats and differentiators, and generate trial-class bookings without relying only on Instagram.',
         },
         solution: {
-          pt: 'Construí um CRUD completo de clientes em CakePHP 3, com validação no servidor (e-mail único), paginação, mensagens de feedback e testes com PHPUnit.',
-          en: 'I built a complete client CRUD in CakePHP 3, with server-side validation (unique email), pagination, feedback messages and PHPUnit tests.',
+          pt: 'Construí o site do zero em React, TypeScript, Tailwind CSS v4 e shadcn/ui, com todo o conteúdo centralizado em uma única fonte de dados, SEO local (JSON-LD), cabeçalhos de segurança reais e um estado vazio honesto na seção de depoimentos, já que a cliente ainda não tinha depoimentos reais pra publicar (sem simular avaliação).',
+          en: 'I built the site from scratch in React, TypeScript, Tailwind CSS v4 and shadcn/ui, with all content centralized in a single data source, local SEO (JSON-LD), real security headers, and an honest empty state in the testimonials section, since the client did not yet have real testimonials to publish (no fake reviews).',
         },
         results: {
-          pt: 'Uma aplicação organizada em camadas (MVC), com integração contínua (Travis CI), que consolidou minha base em PHP e bancos de dados.',
-          en: 'A layered (MVC) application with continuous integration (Travis CI) that consolidated my foundation in PHP and databases.',
+          pt: 'Código completo, com testes automatizados, checagem de acessibilidade e CI, pronto para publicar; o lançamento ao vivo está combinado com a cliente e depende só da data de divulgação.',
+          en: 'Complete codebase, with automated tests, accessibility checks and CI, ready to publish; the live launch is agreed with the client and only depends on the announcement date.',
         },
       },
     },
