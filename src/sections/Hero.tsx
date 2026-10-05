@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useI18n } from '../i18n/context'
 import { ExternalLink } from '../components/ExternalLink'
 import { prefersReducedMotion } from '../lib/prefersReducedMotion'
+import { useMagnetic } from '../hooks/useMagnetic'
 
 const iconProps = {
   width: 18,
@@ -39,6 +40,11 @@ export function Hero() {
   const { s, profile, lang } = useI18n()
   const [reduce] = useState(prefersReducedMotion)
   const [shown, setShown] = useState(reduce)
+  const magneticRef = useMagnetic<HTMLAnchorElement>()
+
+  const nameParts = profile.name.split(' ')
+  const firstNames = nameParts.slice(0, -1).join(' ')
+  const displayName = nameParts.at(-1) ?? profile.name
 
   useEffect(() => {
     if (reduce) return
@@ -72,29 +78,46 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="mx-auto flex min-h-[70svh] w-full max-w-3xl flex-col items-center justify-center px-6 py-20 text-center"
+      className="relative flex min-h-[70svh] w-full flex-col items-center justify-center overflow-clip px-6 py-20 text-center"
     >
+      <span
+        aria-hidden="true"
+        className="hero-blob a"
+        style={{ width: 220, height: 220, top: '10%', right: '6%' }}
+      />
+      <span
+        aria-hidden="true"
+        className="hero-blob b"
+        style={{ width: 150, height: 150, bottom: '14%', left: '4%' }}
+      />
+
+      <p
+        style={i0.style}
+        className={`w-full text-sm font-medium tracking-[0.3em] text-neutral-500 uppercase dark:text-neutral-400 ${i0.className}`}
+      >
+        {firstNames}
+      </p>
       <h1
         style={i0.style}
-        className={`text-4xl font-bold tracking-tight text-neutral-900 sm:text-6xl dark:text-neutral-50 ${i0.className}`}
+        className={`text-gradient text-6xl leading-none font-black tracking-tight uppercase sm:text-8xl ${i0.className}`}
       >
-        {profile.name}
+        {displayName}
       </h1>
       <p
         style={i1.style}
-        className={`mt-4 text-xl text-neutral-700 sm:text-2xl dark:text-neutral-300 ${i1.className}`}
+        className={`mt-4 w-full text-xl text-neutral-700 sm:text-2xl dark:text-neutral-300 ${i1.className}`}
       >
         {profile.role}
       </p>
       <p
         style={i2.style}
-        className={`mt-3 max-w-xl text-base text-neutral-600 dark:text-neutral-400 ${i2.className}`}
+        className={`mt-3 w-full max-w-xl text-base text-neutral-600 dark:text-neutral-400 ${i2.className}`}
       >
         {s.hero.tagline}
       </p>
       <p
         style={i3.style}
-        className={`mt-2 text-sm text-neutral-500 dark:text-neutral-400 ${i3.className}`}
+        className={`mt-2 w-full text-sm text-neutral-500 dark:text-neutral-400 ${i3.className}`}
       >
         {profile.location}
       </p>
@@ -104,7 +127,11 @@ export function Hero() {
         aria-label={s.hero.viewProjects}
         className={`mt-8 flex flex-wrap items-center justify-center gap-3 ${i4.className}`}
       >
-        <a href="#projetos" className={primary}>
+        <a
+          href="#projetos"
+          ref={magneticRef}
+          className={`btn-magnetic ${primary}`}
+        >
           {s.hero.viewProjects}
         </a>
         <a

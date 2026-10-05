@@ -27,9 +27,11 @@ export interface Strings {
     game: string
     ask: string
     contact: string
+    whatIDo: string
   }
   ask: { intro: string }
   experience: { work: string; education: string }
+  projects: { certifications: string }
   hero: { viewProjects: string; contact: string; tagline: string }
   stats: {
     lighthouse: string
@@ -38,7 +40,7 @@ export interface Strings {
     maintenance: string
   }
   contact: { intro: string }
-  projectsNav: { prev: string; next: string }
+  carousel: { prev: string; next: string }
   project: { code: string; live: string }
   caseStudy: {
     show: string
@@ -96,12 +98,14 @@ export const strings: Record<Lang, Strings> = {
       game: 'Mini-game',
       ask: 'Pergunte sobre mim',
       contact: 'Contato',
+      whatIDo: 'O que eu faço',
     },
     ask: { intro: 'Clique numa pergunta e eu respondo aqui.' },
     experience: {
       work: 'Experiência profissional',
       education: 'Formação acadêmica',
     },
+    projects: { certifications: 'Certificações' },
     hero: {
       viewProjects: 'Ver projetos',
       contact: 'Contato',
@@ -115,10 +119,7 @@ export const strings: Record<Lang, Strings> = {
       maintenance: 'no tempo de manutenção preventiva',
     },
     contact: { intro: 'Vamos conversar? Encontre-me nestes canais:' },
-    projectsNav: {
-      prev: 'Ver projetos anteriores',
-      next: 'Ver próximos projetos',
-    },
+    carousel: { prev: 'Rolar para a esquerda', next: 'Rolar para a direita' },
     project: { code: 'Código', live: 'Ver ao vivo' },
     caseStudy: {
       show: 'Ver estudo de caso',
@@ -179,12 +180,14 @@ export const strings: Record<Lang, Strings> = {
       game: 'Mini-game',
       ask: 'Ask me anything',
       contact: 'Contact',
+      whatIDo: 'What I do',
     },
     ask: { intro: "Click a question and I'll answer here." },
     experience: {
       work: 'Professional experience',
       education: 'Education',
     },
+    projects: { certifications: 'Certifications' },
     hero: {
       viewProjects: 'View projects',
       contact: 'Contact',
@@ -198,10 +201,7 @@ export const strings: Record<Lang, Strings> = {
       maintenance: 'in preventive maintenance time',
     },
     contact: { intro: "Let's talk? Find me on these channels:" },
-    projectsNav: {
-      prev: 'See previous projects',
-      next: 'See next projects',
-    },
+    carousel: { prev: 'Scroll left', next: 'Scroll right' },
     project: { code: 'Code', live: 'Live demo' },
     caseStudy: {
       show: 'View case study',

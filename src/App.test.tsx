@@ -3,10 +3,13 @@ import App from './App'
 import { fireIntersection } from './test/intersection'
 
 describe('App', () => {
-  it('renderiza o nome do desenvolvedor', () => {
+  it('renderiza o nome do desenvolvedor no cabeçalho e no Hero', () => {
     render(<App />)
     expect(
-      screen.getByRole('heading', { name: /carlos eduardo/i }),
+      screen.getByRole('link', { name: /carlos eduardo/i }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /eduardo/i }),
     ).toBeInTheDocument()
   })
 

@@ -45,6 +45,15 @@ export interface EducationItem {
   period: string
 }
 
+export interface WhatIDoItem {
+  title: string
+  description: string
+}
+
+export interface Certification {
+  label: string
+}
+
 export interface Profile {
   name: string
   role: string
@@ -53,6 +62,8 @@ export interface Profile {
   skills: SkillGroup[]
   experience: ExperienceItem[]
   education: EducationItem[]
+  whatIDo: WhatIDoItem[]
+  certifications: Certification[]
   contacts: Contact[]
   projects: Project[]
 }
@@ -77,6 +88,8 @@ interface ProfileData {
     org: string
     period: string
   }[]
+  whatIDo: { title: Localized<string>; description: Localized<string> }[]
+  certifications: { label: Localized<string> }[]
   contacts: Contact[]
   projects: {
     name: Localized<string>
@@ -274,6 +287,63 @@ const data: ProfileData = {
       period: '2014',
     },
   ],
+  whatIDo: [
+    {
+      title: { pt: 'Front-end', en: 'Front-end' },
+      description: {
+        pt: 'Interfaces em React, TypeScript e Angular, com foco em performance, acessibilidade e um design que não briga com o usuário.',
+        en: 'Interfaces in React, TypeScript and Angular, focused on performance, accessibility and a design that never fights the user.',
+      },
+    },
+    {
+      title: { pt: 'Back-end e APIs', en: 'Back-end & APIs' },
+      description: {
+        pt: 'Serviços e APIs em Node.js, Java, C# e Python, com banco relacional (SQL) e a lógica bem separada da apresentação.',
+        en: 'Services and APIs in Node.js, Java, C# and Python, with a relational database (SQL) and logic kept well separated from presentation.',
+      },
+    },
+    {
+      title: { pt: 'Dados', en: 'Data' },
+      description: {
+        pt: 'Modelagem em SQL e NoSQL e leitura de dados com Power BI e Excel avançado, para transformar número em decisão.',
+        en: 'SQL and NoSQL modeling and data analysis with Power BI and advanced Excel, turning numbers into decisions.',
+      },
+    },
+    {
+      title: { pt: 'Qualidade e entrega', en: 'Quality & delivery' },
+      description: {
+        pt: 'Testes automatizados, CI/CD e Git, com a disciplina de diagnóstico que trouxe da eletrônica: entender o todo antes de mexer.',
+        en: 'Automated tests, CI/CD and Git, with the diagnostic discipline I brought from electronics: understand the whole before touching anything.',
+      },
+    },
+  ],
+  certifications: [
+    {
+      label: { pt: 'Data Science — Santander', en: 'Data Science — Santander' },
+    },
+    {
+      label: { pt: 'AI React Front-end — DIO', en: 'AI React Front-end — DIO' },
+    },
+    { label: { pt: 'IA para Carreira — DIO', en: 'AI for Career — DIO' } },
+    {
+      label: {
+        pt: 'Marketing Digital — Google',
+        en: 'Digital Marketing — Google',
+      },
+    },
+    { label: { pt: 'Carreira Dev — Google', en: 'Dev Career — Google' } },
+    { label: { pt: 'Inglês — Wizard', en: 'English — Wizard' } },
+    { label: { pt: 'Bombeiro Civil', en: 'Civil Firefighter' } },
+    { label: { pt: 'Vigilante — CFV', en: 'Security Guard — CFV' } },
+    {
+      label: {
+        pt: 'Grandes Catástrofes — Coren-RJ',
+        en: 'Major Disasters — Coren-RJ',
+      },
+    },
+    { label: { pt: 'Não é Não — RJ', en: 'No Means No — RJ' } },
+    { label: { pt: 'Coca-Cola Jovem', en: 'Coca-Cola Youth' } },
+  ],
   contacts: [
     {
       type: 'linkedin',
@@ -312,27 +382,27 @@ const data: ProfileData = {
     },
     {
       name: {
-        pt: 'Sistema de Cadastro de Clientes',
-        en: 'Client Management System',
+        pt: 'Studio Adrielle Ferreira Pilates',
+        en: 'Studio Adrielle Ferreira Pilates',
       },
       description: {
-        pt: 'Aplicação web CRUD para cadastrar e gerenciar clientes, com validação e paginação.',
-        en: 'A CRUD web app to register and manage clients, with validation and pagination.',
+        pt: 'Site institucional para um estúdio de pilates e fisioterapia, projeto freelance real, feito para converter visitantes em aula experimental agendada.',
+        en: 'Institutional site for a pilates and physiotherapy studio, a real freelance project built to convert visitors into booked trial classes.',
       },
-      tags: ['PHP', 'CakePHP', 'MySQL', 'MVC'],
-      repoUrl: 'https://github.com/Streche/projeto',
+      tags: ['React', 'TypeScript', 'Tailwind', 'shadcn/ui'],
+      repoUrl: 'https://github.com/Streche/studio-adrielle-pilates',
       caseStudy: {
         problem: {
-          pt: 'Eu precisava praticar desenvolvimento back-end com um framework MVC de verdade, indo além de scripts soltos.',
-          en: 'I needed to practice back-end development with a real MVC framework, beyond loose scripts.',
+          pt: 'Uma cliente real precisava de um site profissional para apresentar o estúdio, suas modalidades e diferenciais, e gerar agendamentos de aula experimental, sem depender só do Instagram.',
+          en: 'A real client needed a professional site to present the studio, its class formats and differentiators, and generate trial-class bookings without relying only on Instagram.',
         },
         solution: {
-          pt: 'Construí um CRUD completo de clientes em CakePHP 3, com validação no servidor (e-mail único), paginação, mensagens de feedback e testes com PHPUnit.',
-          en: 'I built a complete client CRUD in CakePHP 3, with server-side validation (unique email), pagination, feedback messages and PHPUnit tests.',
+          pt: 'Construí o site do zero em React, TypeScript, Tailwind CSS v4 e shadcn/ui, com todo o conteúdo centralizado em uma única fonte de dados, SEO local (JSON-LD), cabeçalhos de segurança reais e um estado vazio honesto na seção de depoimentos, já que a cliente ainda não tinha depoimentos reais pra publicar (sem simular avaliação).',
+          en: 'I built the site from scratch in React, TypeScript, Tailwind CSS v4 and shadcn/ui, with all content centralized in a single data source, local SEO (JSON-LD), real security headers, and an honest empty state in the testimonials section, since the client did not yet have real testimonials to publish (no fake reviews).',
         },
         results: {
-          pt: 'Uma aplicação organizada em camadas (MVC), com integração contínua (Travis CI), que consolidou minha base em PHP e bancos de dados.',
-          en: 'A layered (MVC) application with continuous integration (Travis CI) that consolidated my foundation in PHP and databases.',
+          pt: 'Código completo, com testes automatizados, checagem de acessibilidade e CI, pronto para publicar; o lançamento ao vivo está combinado com a cliente e depende só da data de divulgação.',
+          en: 'Complete codebase, with automated tests, accessibility checks and CI, ready to publish; the live launch is agreed with the client and only depends on the announcement date.',
         },
       },
     },
@@ -361,6 +431,13 @@ export function getProfile(lang: Lang): Profile {
       course: item.course[lang],
       org: item.org,
       period: item.period,
+    })),
+    whatIDo: data.whatIDo.map((item) => ({
+      title: item.title[lang],
+      description: item.description[lang],
+    })),
+    certifications: data.certifications.map((item) => ({
+      label: item.label[lang],
     })),
     contacts: data.contacts,
     projects: data.projects.map((project) => ({

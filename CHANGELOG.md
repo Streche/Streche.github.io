@@ -5,6 +5,49 @@ Todas as mudanças notáveis deste projeto são registradas aqui.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [2.0.0] - 2026-09-14
+
+### Alterado
+
+- Redesign visual completo do portfólio (Hero, seções e navegação), com uma
+  nova identidade: títulos em gradiente, plano de fundo com brilho radial e
+  grão sutil, formas decorativas e botão com hover magnético. Mantém os dois
+  temas (claro/escuro), i18n PT/EN e nenhuma biblioteca nova.
+- Hero: o nome de destaque passa a mostrar só "EDUARDO" (o restante do nome
+  aparece pequeno acima).
+- "Competências" vira um mosaico de tiles com a stack técnica (duas fileiras
+  que deslizam ao rolar a página); em "reduzir animações" vira uma grade
+  estática, sem repetição.
+- Nova seção "O que eu faço", com as 4 frentes de atuação (front-end,
+  back-end e APIs, dados, qualidade e entrega).
+- "Experiência" ganha numeração grande por vaga, no mesmo estilo visual.
+- "Projetos" passa de carrossel horizontal para lista vertical de cards, e
+  ganha logo abaixo uma grade com as 11 certificações e cursos.
+- "Contato" com botões em formato de pílula.
+- O mini-game passa a ocupar a largura inteira da tela (mantendo o jogo em
+  si numa largura legível) e muda de posição: fica por último, antes do
+  rodapé.
+- "Competências" e "Certificações" viram faixas horizontais de ponta a
+  ponta, com setas de navegação e auto-scroll que pausa no hover/foco do
+  teclado (sem duplicar conteúdo para leitor de tela). As duas fileiras de
+  Competências dividem um único par de setas, e todas as caixas passam a
+  ter o mesmo tamanho.
+- Títulos de todas as seções (Competências, Sobre mim, Experiência etc.) e
+  o conteúdo da seção Contato ficam centralizados, acompanhando o Hero.
+- Projeto "Sistema de Cadastro de Clientes" (CakePHP) sai da seção
+  Projetos; entra o site do Studio Adrielle Ferreira Pilates, um projeto
+  freelance real.
+
+### Corrigido
+
+- Hero: em telas estreitas, o parágrafo de tagline (o mais longo) não
+  quebrava linha corretamente e tinha o final cortado.
+- A faixa de Competências/Certificações empurrava a seta "próxima" para
+  fora da área visível em qualquer largura de tela (bug clássico de
+  flexbox aninhado com `overflow-x-auto`).
+- Seções de ponta a ponta (`.full-bleed`) ficavam alguns pixels maiores
+  que a área visível quando a barra de rolagem aparecia.
+
 ## [1.10.1] - 2026-09-14
 
 ### Adicionado
