@@ -54,6 +54,11 @@ export function TileCarousel({
     const tracks = tracksRef.current
     halfWidthsRef.current = tracks.map((track, index) => {
       const half = (track?.scrollWidth ?? 0) / 2
+      // Linhas ímpares começam na metade (2ª cópia) pra poder "andar" pra
+      // trás. Esse salto precisa ser instantâneo: por isso a faixa NÃO tem
+      // a classe scroll-smooth (CSS). Se tivesse, esse salto grande viraria
+      // uma animação suave que o tick do auto-scroll, 30ms depois, interrompe
+      // repetidamente, e a faixa trava sem se mover de verdade.
       if (track && index % 2 === 1) track.scrollLeft = half
       return half
     })
@@ -126,7 +131,7 @@ export function TileCarousel({
             ref={(el) => {
               tracksRef.current[rowIndex] = el
             }}
-            className="scrollbar-hide flex gap-3 overflow-x-auto scroll-smooth"
+            className="scrollbar-hide flex gap-3 overflow-x-auto"
           >
             {rowItems.map((item, index) => (
               <li key={`a-${item}-${index}`} className={tileClass}>

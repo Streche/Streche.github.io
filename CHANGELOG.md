@@ -5,6 +5,16 @@ Todas as mudanças notáveis deste projeto são registradas aqui.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [2.0.1] - 2026-10-05
+
+### Corrigido
+
+- Faixa de Competências: a 2ª linha (que anda em sentido contrário) ficava
+  travada e não fazia o auto-scroll. A linha começa com um salto grande até
+  a metade da faixa para poder "andar" para trás, e a classe `scroll-smooth`
+  fazia esse salto virar uma animação que o tick do auto-scroll (30ms
+  depois) interrompia sem parar, travando a faixa.
+
 ## [2.0.0] - 2026-09-14
 
 ### Alterado
