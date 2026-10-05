@@ -10,10 +10,10 @@ export function Contact() {
 
   return (
     <Section id="contato" title={s.sections.contact}>
-      <p className="mb-4 text-lg text-neutral-700 dark:text-neutral-300">
+      <p className="mb-4 text-center text-lg text-neutral-700 dark:text-neutral-300">
         {s.contact.intro}
       </p>
-      <ul className="flex flex-wrap gap-3">
+      <ul className="flex flex-wrap justify-center gap-3">
         <li>
           <a
             href={`/cv.html?lang=${lang}`}
