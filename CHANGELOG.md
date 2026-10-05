@@ -27,6 +27,26 @@ e o projeto segue [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 - O mini-game passa a ocupar a largura inteira da tela (mantendo o jogo em
   si numa largura legível) e muda de posição: fica por último, antes do
   rodapé.
+- "Competências" e "Certificações" viram faixas horizontais de ponta a
+  ponta, com setas de navegação e auto-scroll que pausa no hover/foco do
+  teclado (sem duplicar conteúdo para leitor de tela). As duas fileiras de
+  Competências dividem um único par de setas, e todas as caixas passam a
+  ter o mesmo tamanho.
+- Títulos de todas as seções (Competências, Sobre mim, Experiência etc.) e
+  o conteúdo da seção Contato ficam centralizados, acompanhando o Hero.
+- Projeto "Sistema de Cadastro de Clientes" (CakePHP) sai da seção
+  Projetos; entra o site do Studio Adrielle Ferreira Pilates, um projeto
+  freelance real.
+
+### Corrigido
+
+- Hero: em telas estreitas, o parágrafo de tagline (o mais longo) não
+  quebrava linha corretamente e tinha o final cortado.
+- A faixa de Competências/Certificações empurrava a seta "próxima" para
+  fora da área visível em qualquer largura de tela (bug clássico de
+  flexbox aninhado com `overflow-x-auto`).
+- Seções de ponta a ponta (`.full-bleed`) ficavam alguns pixels maiores
+  que a área visível quando a barra de rolagem aparecia.
 
 ## [1.10.1] - 2026-09-14
 
